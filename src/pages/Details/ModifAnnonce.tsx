@@ -3,21 +3,13 @@ import {
     IonPage,
     IonIcon,
     IonContent
-  } from '@ionic/react';
-  import { arrowBack,arrowForwardOutline  } from 'ionicons/icons';
-  import './ModifAnnonce.css';
+} from '@ionic/react';
+import { Link } from 'react-router-dom';
+import { arrowBack  } from 'ionicons/icons';
+import './ModifAnnonce.css';
 import { SelectP } from '../../components/Select/SelectP';
   
   const ModifAnnonce = () => {
-    const [isButtonClicked, setIsButtonClicked] = useState(false);
-
-    const handleClick = () => {
-        setIsButtonClicked(true);
-
-        setTimeout(() => {
-            setIsButtonClicked(false);
-        }, 300);
-    };
 
     return (
       <IonPage>
@@ -25,7 +17,9 @@ import { SelectP } from '../../components/Select/SelectP';
             <section className='ion-content-body-modif'>
                 <div className='modif-header'>
                     <div className='icon-arrowBack'>
-                        <IonIcon aria-hidden="true" icon={arrowBack} />
+                        <Link to="/details">
+                            <IonIcon aria-hidden="true" icon={arrowBack} />
+                        </Link>
                     </div>
                     <div className="title">
                         <h2>Modification</h2>
@@ -67,9 +61,9 @@ import { SelectP } from '../../components/Select/SelectP';
                                 
                             </div>
 
-                            <div className="link-next">
-                                <a href="">Annuler</a>
-                                <a href='/modificationsuite'>Suivant</a>
+                            <div className="link">
+                                <Link to="/details" className='link-back'>Annuler</Link>
+                                <Link to='/modificationsuite' className='link-next'>Suivant</Link>
                             </div>
                         </form>
                     </div>

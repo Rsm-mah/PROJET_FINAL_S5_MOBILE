@@ -3,10 +3,10 @@ import {
     IonPage,
     IonIcon,
     IonContent
-  } from '@ionic/react';
-  import { arrowBack } from 'ionicons/icons';
-  import './ModifAnnonce.css';
-import { SelectP } from '../../components/Select/SelectP';
+} from '@ionic/react';
+import { Link } from 'react-router-dom';
+import { arrowBack } from 'ionicons/icons';
+import './ModifAnnonce.css';
   
   const ModifAnnonceSuite = () => {
     const [isButtonClicked, setIsButtonClicked] = useState(false);
@@ -25,9 +25,9 @@ import { SelectP } from '../../components/Select/SelectP';
             <section className='ion-content-body-modif'>
                 <div className='modif-header'>
                     <div className='icon-arrowBack'>
-                        <a href="/modification">
+                        <Link to="/modification">
                             <IonIcon aria-hidden="true" icon={arrowBack} />
-                        </a>
+                        </Link>
                     </div>
                     <div className="title">
                         <h2>Modification</h2>
@@ -62,6 +62,7 @@ import { SelectP } from '../../components/Select/SelectP';
                                 </div>
 
                                 <div className="button">
+                                    <Link to="/modification">Retour</Link>
                                     <button className={`button-valider ${isButtonClicked ? 'button-valider-clicked' : ''}`} onClick={handleClick}>VALIDER</button>
                                 </div>
                             </form>

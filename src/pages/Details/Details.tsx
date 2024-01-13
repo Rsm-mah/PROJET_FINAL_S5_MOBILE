@@ -23,8 +23,6 @@ const Details = () => {
             </div>
 
             <DetailsAnnonce/>
-
-            <Navigation/>
           </section>
         </IonContent>
     </IonPage>

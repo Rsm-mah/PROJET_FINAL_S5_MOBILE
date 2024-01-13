@@ -1,18 +1,20 @@
 import React, { useState,useRef} from 'react';
-import {IonModal,IonButton} from '@ionic/react';
+import {IonModal} from '@ionic/react';
+import { Link } from 'react-router-dom';
 import './DetailsAnnonce.css';
 import Sary from '../../assets/img/test3.jfif';
   
   const DetailsAnnonce = () => {
     const modal = useRef<HTMLIonModalElement>(null);
-
     const [isButtonClicked, setIsButtonClicked] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(true);
 
     const handleClick = () => {
         setIsButtonClicked(true);
 
         setTimeout(() => {
             setIsButtonClicked(false);
+            setIsModalOpen(false);
         }, 300);
     };
 
@@ -21,7 +23,7 @@ import Sary from '../../assets/img/test3.jfif';
             <div className='voiture-photo'>
                 <img src={Sary} alt="" />
             </div>
-            <IonModal className='ion-modal' ref={modal} trigger="open-modal" isOpen={true} initialBreakpoint={0.4} breakpoints={[0.25, 0.4, 0.65]} backdropDismiss={false} backdropBreakpoint={0.5}>
+            <IonModal className='ion-modal' ref={modal} trigger="open-modal" isOpen={isModalOpen} initialBreakpoint={0.4} breakpoints={[0.25, 0.4, 0.65]} backdropDismiss={false} backdropBreakpoint={0.5}>
                 <div className="voiture">
                     <div className="voiture-name">
                         <div className="voiture-name-categorie">
@@ -62,7 +64,9 @@ import Sary from '../../assets/img/test3.jfif';
                             <p>Statut: <span>Disponible</span></p>
                         </div>
                     </div>
-                    <button className={`modif-button ${isButtonClicked ? 'button-clicked' : ''}`} onClick={handleClick}>MODIFIER</button>
+                    <Link to="/modification">
+                        <button className={`modif-button ${isButtonClicked ? 'button-clicked' : ''}`} onClick={handleClick}>MODIFIER</button>
+                    </Link>
                 </div>
             </IonModal>
         </div>
