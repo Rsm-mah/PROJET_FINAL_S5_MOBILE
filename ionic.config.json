@@ -1,0 +1,7 @@
+{
+  "name": "PROJET_FINAL_S5",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

@@ -1,0 +1,49 @@
+.box_select{
+    /* position: relative; */
+    
+}
+.label_select{
+    margin: 5px auto;
+    border-bottom: groove 1px #2f3032;
+    width: 8.5cm;
+    text-align: left;
+    transition: 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5px;
+
+}
+
+.box_option_select{
+    position: relative;
+    overflow: hidden;
+    width: 78%;
+    transition: 0.5s ease-in-out;
+    overflow-y: scroll;
+    z-index: 10;
+    background-color: white;
+    margin-left: 45px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.option_item {
+    padding: 10px;
+    margin: 5px auto;
+    width: 8.5cm;
+    text-align: left;
+}
+.icon_select{
+    transition: 0.5s ease-in-out;
+}
+.icon_select.open{
+    transform: rotate(0deg);
+}
+.icon_select.close{
+    transform: rotate(-180deg);
+}
+.box_option_select.open {
+    height: 0;
+}
+.box_option_select.close {
+    height: 150px;
+}
