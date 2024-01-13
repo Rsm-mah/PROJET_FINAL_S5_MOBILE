@@ -15,8 +15,10 @@ import Login from './pages/Login/Login';
 import Inscription from './pages/Inscription/Inscription';
 import Inscription_suite from './pages/Inscription/Inscription_suite';
 import Details from './pages/Details/Details';
-import ModifAnnonce from './pages/Details/ModifAnnonce';
-import ModifAnnonceSuite from './pages/Details/ModifAnnonceSuite';
+import ModifAnnonce from './pages/Modification/ModifAnnonce';
+import ModifAnnonceSuite from './pages/Modification/ModifAnnonceSuite';
+import Annonce from './pages/Annonce/Annonce';
+import Notification from './pages/Notification/Notification';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -67,6 +69,9 @@ const App: React.FC = () => (
           <Route exact path="/inscription_next">
             <Inscription_suite />
           </Route>
+          <Route exact path="/annonce">
+            <Annonce />
+          </Route>
           <Route exact path="/details">
             <Details />
           </Route>
@@ -75,6 +80,9 @@ const App: React.FC = () => (
           </Route>
           <Route exact path="/modificationsuite">
             <ModifAnnonceSuite />
+          </Route>
+          <Route exact path="/notification">
+            <Notification />
           </Route>
           <Route exact path="/">
             <Redirect to="/index" />
