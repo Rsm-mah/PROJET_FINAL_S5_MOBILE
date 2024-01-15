@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IonContent, IonIcon, IonPage } from '@ionic/react';
+import { Link } from 'react-router-dom';
 import './Inscription.css';
 import { eye,eyeOff } from 'ionicons/icons';
 
@@ -50,9 +51,9 @@ const Inscription_suite = () => {
                         </div>
 
                         <div className="back-link">
-                            <a href="/inscription">
+                            <Link to="/inscription">
                                 <button>Retour</button>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

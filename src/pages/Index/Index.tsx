@@ -1,4 +1,5 @@
 import { IonContent, IonPage } from '@ionic/react';
+import { Link } from 'react-router-dom';
 import './Index.css';
 
 const Index = () => {
@@ -10,9 +11,9 @@ const Index = () => {
                     <h1 className='app-title'>MyCar</h1>
                     <p className='app-description'>Trouvez la voiture parfaite pour vous.</p>
                 </div>
-                <a href="/login">
+                <Link to="/annonce">
                     <button className='button-start'>Commencer</button>
-                </a>
+                </Link>
             </section>
         </IonContent>
     </IonPage>

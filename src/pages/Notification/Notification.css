@@ -1,0 +1,69 @@
+@keyframes slideIn {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+ion-content .ion-content-body-notif {
+    height: 100vh;
+    overflow: auto;
+    text-align: center;
+}
+
+.ion-content-body-notif .notif-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: #fff;
+}
+
+.ion-content-body-notif .notif-header .title {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Montserat';
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.ion-content-body-notif .listNotification {
+    height: auto;
+    overflow: scroll;
+    margin-top: 2cm;
+    margin-bottom: 65px;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+.ion-content-body-notif .listNotification .notification {
+    display: flex;
+    align-items: center;
+
+    .sender-picture {
+        padding-left: 10px;
+        img {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px; 
+            object-fit: cover; 
+        }
+    }
+    .message {
+        text-align: start;
+        padding-left: 10px;
+        p {
+            font-size: 16px;
+        }
+        .name {
+            font-weight: bold;
+        }
+        .heure {
+            color: gray;
+            font-size: 14px;
+            margin-top: -7px;
+        }
+    }
+}

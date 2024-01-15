@@ -72,13 +72,13 @@ ion-content .ion-content-body-modif {
 }
 
 .ion-content-body-modif .link .link-back {
-    margin-left: 25px;
+    margin-left: 8px;
     color: #2f3032;
     background-color: #fff;
 }
 
 .ion-content-body-modif .link .link-next {
-    margin-right: 25px;
+    margin-right: 8px;
     background-color: #2f3032;
     color: #fff;
 }

@@ -1,6 +1,6 @@
-import React, { useState,useRef} from 'react';
+import React, { useState,useRef,useEffect} from 'react';
 import {IonModal} from '@ionic/react';
-import { Link } from 'react-router-dom';
+import { Link,useLocation } from 'react-router-dom';
 import './DetailsAnnonce.css';
 import Sary from '../../assets/img/test3.jfif';
   
@@ -17,6 +17,14 @@ import Sary from '../../assets/img/test3.jfif';
             setIsModalOpen(false);
         }, 300);
     };
+
+    useEffect(()=> {
+        if (location.pathname=="/details") {
+            setIsModalOpen(true);
+        } else {
+            setIsModalOpen(false);
+        }
+    },[location.pathname])
 
     return (
         <div className='details'>

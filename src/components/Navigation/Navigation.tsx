@@ -16,7 +16,7 @@ import './Navigation.css';
                 <IonTabButton className='ion-tab-button' tab="tab2" href="/notification">
                     <IonIcon aria-hidden="true" icon={notifications} />
                 </IonTabButton>
-                <IonTabButton className='ion-tab-button' tab="tab3" href="/tab3">
+                <IonTabButton className='ion-tab-button' tab="tab3" href="/profil">
                     <IonIcon aria-hidden="true" icon={person} />
                 </IonTabButton>
             </IonTabBar>

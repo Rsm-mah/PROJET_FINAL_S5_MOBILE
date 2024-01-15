@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IonContent, IonIcon, IonPage } from '@ionic/react';
+import { Link } from 'react-router-dom';
 import './Login.css';
 import { eye,eyeOff } from 'ionicons/icons';
 
@@ -49,9 +50,9 @@ const Login = () => {
                         </div>
 
                         <div className="inscription-link">
-                            <a href="/inscription">
+                            <Link to="/inscription">
                                 <button>S'inscrire</button>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

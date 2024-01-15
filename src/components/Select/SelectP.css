@@ -18,12 +18,12 @@
 .box_option_select{
     position: relative;
     overflow: hidden;
-    width: 78%;
+    width: 8.4cm;
     transition: 0.5s ease-in-out;
     overflow-y: scroll;
     z-index: 10;
     background-color: white;
-    margin-left: 45px;
+    margin-left: 16px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .option_item {

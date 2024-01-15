@@ -16,6 +16,7 @@ ion-content .ion-content-body-detail {
     position: relative;
     left: 30px;
     top: 30px;
+    color: #2f3032;
 }
 
 .ion-content-body-detail .detail-header .title {

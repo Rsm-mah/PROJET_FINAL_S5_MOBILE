@@ -5,12 +5,26 @@ ion-content .ion-content-body-annonce {
 }
 
 .ion-content-body-annonce .annonce-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: #fff;
+
     ion-searchbar {
         padding: 11px;
-        margin-top: 1cm;
+        margin: 10px 0px 12px 0px;
 
         input {
             text-align: start;
+        }
+    }
+
+    .slide-search {
+        margin-bottom: 10px;
+        font-size: 16px;
+
+        .swiper-slide {
+            font-size: 16px;
         }
     }
 }
@@ -18,6 +32,7 @@ ion-content .ion-content-body-annonce {
 .ion-content-body-annonce .listAnnonce {
     height: auto;
     overflow: auto;
+    margin-top: 3cm;
     margin-bottom: 65px;
 }
 

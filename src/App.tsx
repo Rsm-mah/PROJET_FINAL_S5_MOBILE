@@ -19,6 +19,7 @@ import ModifAnnonce from './pages/Modification/ModifAnnonce';
 import ModifAnnonceSuite from './pages/Modification/ModifAnnonceSuite';
 import Annonce from './pages/Annonce/Annonce';
 import Notification from './pages/Notification/Notification';
+import Profil from './pages/Profil/Profil';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -83,6 +84,9 @@ const App: React.FC = () => (
           </Route>
           <Route exact path="/notification">
             <Notification />
+          </Route>
+          <Route exact path="/profil">
+            <Profil />
           </Route>
           <Route exact path="/">
             <Redirect to="/index" />

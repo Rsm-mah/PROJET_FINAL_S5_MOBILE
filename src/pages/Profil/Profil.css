@@ -1,0 +1,12 @@
+ion-content .ion-content-body-profil {
+    height: 100vh;
+    overflow: auto;
+    text-align: center;
+}
+
+.ion-content-body-notif .profil-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: #fff;
+}
