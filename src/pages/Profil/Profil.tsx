@@ -5,6 +5,8 @@ import {
     IonContent
 } from '@ionic/react';
 import './Profil.css';
+import { Link } from 'react-router-dom';
+import { camera } from 'ionicons/icons';
 import Navigation from '../../components/Navigation/Navigation';
 import Sary from '../../assets/img/test3.jfif';
   
@@ -17,10 +19,21 @@ import Sary from '../../assets/img/test3.jfif';
                 <div className='profil-header'>
                     <div className="title">
                         <h2>Profil</h2>
-                        <p>sjs</p>
                     </div>
                 </div>
 
+                <div className="profil">
+                    <div className="profil-picture">
+                        <img src={Sary} alt="" />
+                    </div>
+                    <div className="camera-icon">
+                        <IonIcon icon={camera}></IonIcon>
+                    </div>
+                </div>
+
+                <div className="modif-button">
+                    <Link to="">Modifier le profil</Link>
+                </div>
                 
 
                 <Navigation/>

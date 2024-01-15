@@ -4,9 +4,55 @@ ion-content .ion-content-body-profil {
     text-align: center;
 }
 
-.ion-content-body-notif .profil-header {
+.ion-content-body-profil .profil-header {
     width: 100%;
     position: fixed;
     top: 0;
     background: #fff;
+    z-index: 1;
 }
+
+.ion-content-body-profil .profil {
+    margin-top: 2cm;
+    display: flex;
+    justify-content: center;
+
+    .profil-picture {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    .camera-icon {
+        display: flex;
+        position: absolute;
+        background-color: gray; 
+        color: #fff;
+        margin-left: 12vh;
+        margin-top: 12vh;
+        padding: 8px;
+        border-radius: 50%;
+        font-size: 24px;
+    }
+}
+
+.ion-content-body-profil .modif-button {
+    margin-top: 4vh;
+    a {
+        text-decoration: none;
+        color: #2f3032;
+        background-color: #d6d6d69c;
+        font-weight: bold;
+        padding: 10px;
+    }
+}
+
