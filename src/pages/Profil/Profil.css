@@ -81,26 +81,102 @@ ion-content .ion-content-body-profil {
     flex-wrap: wrap;
 
     .annonce {
-        width: 3.63cm;
+        width: 15vh;
         height: 149px;
         img {
-            width: 138px;
+            width: 15vh;
             height: 150px;
         }
     }
 }
 
-
-
-
-/* .ion-content-body-profil .modif-button {
-    margin-top: 4vh;
-    a {
-        text-decoration: none;
-        color: #2f3032;
-        background-color: #d6d6d69c;
-        font-weight: bold;
-        padding: 10px;
+@media only screen and (min-width:375px) {
+    .ion-content-body-profil .listAnnonce {    
+        .annonce {
+            width: 18.6vh;
+            height: 149px;
+            img {
+                width: 18.6vh;
+                height: 150px;
+            }
+        }
     }
-} */
+}
 
+@media only screen and (min-width:360px) {
+    .ion-content-body-profil .listAnnonce {    
+        .annonce {
+            width: 16.2vh;
+            height: 149px;
+            img {
+                width: 16.2vh;
+                height: 150px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:375px) {
+    .ion-content-body-profil .listAnnonce {    
+        .annonce {
+            width: 15.4vh;
+            height: 149px;
+            img {
+                width: 15.4vh;
+                height: 150px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:390px) {
+    .ion-content-body-profil .listAnnonce {    
+        .annonce {
+            width: 15.4vh;
+            height: 149px;
+            img {
+                width: 15.4vh;
+                height: 150px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:412px) {
+    .ion-content-body-profil .listAnnonce {    
+        .annonce {
+            width: 15vh;
+            height: 149px;
+            img {
+                width: 15vh;
+                height: 150px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:414px) {
+    .ion-content-body-profil .listAnnonce {    
+        .annonce {
+            width: 15.4vh;
+            height: 149px;
+            img {
+                width: 15.4vh;
+                height: 150px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:430px) {
+    .ion-content-body-profil .listAnnonce {    
+        .annonce {
+            width: 15.3vh;
+            height: 149px;
+            img {
+                width: 15.3vh;
+                height: 150px;
+            }
+        }
+    }
+}
