@@ -14,38 +14,69 @@ ion-content .ion-content-body-profil {
 
 .ion-content-body-profil .profil {
     margin-top: 2cm;
-    display: flex;
-    justify-content: center;
 
     .profil-picture {
-        position: relative;
-        width: 150px;
-        height: 150px;
-        overflow: hidden;
-        border-radius: 50%;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-    }
-
-    .camera-icon {
         display: flex;
-        position: absolute;
-        background-color: gray; 
-        color: #fff;
-        margin-left: 12vh;
-        margin-top: 12vh;
-        padding: 8px;
-        border-radius: 50%;
-        font-size: 24px;
+        justify-content: center;
+
+        ion-avatar {
+            width: 95px;
+            height: 95px;
+        }
     }
 }
 
-.ion-content-body-profil .modif-button {
+.ion-content-body-profil .stats {
+    display: flex;
+    align-items: end;
+    margin-left: 34px;
+    margin-right: 34px;
+    margin-top: 3vh;
+
+    hr {
+        height: 40px;
+        border-width: 1px;
+    }
+
+    .stats-annonce {
+        h2 {
+            font-weight: bold;
+        }
+        p {
+            margin: 0;
+            color: gray;
+        }
+    }
+}
+
+.ion-content-body-profil .swiper {
+    margin-top: 3vh;
+
+    ion-icon {
+        font-size: 22px;
+    }
+}
+
+.ion-content-body-profil .listAnnonce {
+    margin-top: 1px;
+    margin-bottom: 65px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .annonce {
+        width: 3.63cm;
+        height: 149px;
+        img {
+            width: 138px;
+            height: 150px;
+        }
+    }
+}
+
+
+
+
+/* .ion-content-body-profil .modif-button {
     margin-top: 4vh;
     a {
         text-decoration: none;
@@ -54,5 +85,5 @@ ion-content .ion-content-body-profil {
         font-weight: bold;
         padding: 10px;
     }
-}
+} */
 

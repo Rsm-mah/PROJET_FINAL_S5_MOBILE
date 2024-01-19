@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import {
     IonPage,
-    IonIcon,
+    IonAvatar,
     IonContent
 } from '@ionic/react';
 import './Notification.css';
@@ -23,7 +23,9 @@ import Sary from '../../assets/img/test3.jfif';
                 <div className='listNotification'>
                   <div className="notification">
                     <div className="sender-picture">
-                      <img src={Sary} alt="" />
+                      <IonAvatar>
+                          <img alt="Silhouette of a person's head" src={Sary} />
+                      </IonAvatar>
                     </div>
                     <div className="message">
                       <p><span className='name'>RASAMISOA Mahefa</span> vous a envoyé un nouveau message</p>
@@ -32,7 +34,9 @@ import Sary from '../../assets/img/test3.jfif';
                   </div>
                   <div className="notification">
                     <div className="sender-picture">
-                      <img src={Sary} alt="" />
+                      <IonAvatar>
+                        <img alt="Silhouette of a person's head" src={Sary} />
+                      </IonAvatar>
                     </div>
                     <div className="message">
                       <p><span className='name'>RASAMISOA Mahefa</span> vous a envoyé un nouveau message</p>
@@ -41,7 +45,9 @@ import Sary from '../../assets/img/test3.jfif';
                   </div>
                   <div className="notification">
                     <div className="sender-picture">
-                      <img src={Sary} alt="" />
+                    <IonAvatar>
+                        <img alt="Silhouette of a person's head" src={Sary} />
+                      </IonAvatar>
                     </div>
                     <div className="message">
                       <p><span className='name'>RASAMISOA Mahefa</span> vous a envoyé un nouveau message</p>
@@ -50,7 +56,9 @@ import Sary from '../../assets/img/test3.jfif';
                   </div>
                   <div className="notification">
                     <div className="sender-picture">
-                      <img src={Sary} alt="" />
+                    <IonAvatar>
+                        <img alt="Silhouette of a person's head" src={Sary} />
+                      </IonAvatar>
                     </div>
                     <div className="message">
                       <p><span className='name'>RASAMISOA Mahefa</span> vous a envoyé un nouveau message</p>
@@ -59,7 +67,9 @@ import Sary from '../../assets/img/test3.jfif';
                   </div>
                   <div className="notification">
                     <div className="sender-picture">
-                      <img src={Sary} alt="" />
+                    <IonAvatar>
+                        <img alt="Silhouette of a person's head" src={Sary} />
+                      </IonAvatar>
                     </div>
                     <div className="message">
                       <p><span className='name'>RASAMISOA Mahefa</span> vous a envoyé un nouveau message</p>
@@ -68,7 +78,9 @@ import Sary from '../../assets/img/test3.jfif';
                   </div>
                   <div className="notification">
                     <div className="sender-picture">
-                      <img src={Sary} alt="" />
+                      <IonAvatar>
+                        <img alt="Silhouette of a person's head" src={Sary} />
+                      </IonAvatar>
                     </div>
                     <div className="message">
                       <p><span className='name'>RASAMISOA Mahefa</span> vous a envoyé un nouveau message</p>
@@ -77,7 +89,9 @@ import Sary from '../../assets/img/test3.jfif';
                   </div>
                   <div className="notification">
                     <div className="sender-picture">
-                      <img src={Sary} alt="" />
+                      <IonAvatar>
+                        <img alt="Silhouette of a person's head" src={Sary} />
+                      </IonAvatar>
                     </div>
                     <div className="message">
                       <p><span className='name'>RASAMISOA Mahefa</span> vous a envoyé un nouveau message</p>
@@ -86,7 +100,9 @@ import Sary from '../../assets/img/test3.jfif';
                   </div>
                   <div className="notification">
                     <div className="sender-picture">
-                      <img src={Sary} alt="" />
+                      <IonAvatar>
+                        <img alt="Silhouette of a person's head" src={Sary} />
+                      </IonAvatar>
                     </div>
                     <div className="message">
                       <p><span className='name'>RASAMISOA Mahefa</span> vous a envoyé un nouveau message</p>
@@ -95,7 +111,9 @@ import Sary from '../../assets/img/test3.jfif';
                   </div>
                   <div className="notification">
                     <div className="sender-picture">
-                      <img src={Sary} alt="" />
+                      <IonAvatar>
+                        <img alt="Silhouette of a person's head" src={Sary} />
+                      </IonAvatar>
                     </div>
                     <div className="message">
                       <p><span className='name'>RASAMISOA Mahefa</span> vous a envoyé un nouveau message</p>
@@ -104,7 +122,9 @@ import Sary from '../../assets/img/test3.jfif';
                   </div>
                   <div className="notification">
                     <div className="sender-picture">
-                      <img src={Sary} alt="" />
+                      <IonAvatar>
+                        <img alt="Silhouette of a person's head" src={Sary} />
+                      </IonAvatar>
                     </div>
                     <div className="message">
                       <p><span className='name'>RASAMISOA Mahefa</span> vous a envoyé un nouveau message</p>
