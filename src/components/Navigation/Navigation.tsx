@@ -3,7 +3,7 @@ import {
     IonTabBar,
     IonTabButton
   } from '@ionic/react';
-import { home, notifications, person } from 'ionicons/icons';
+import { home, notifications, person, chatbubble, add } from 'ionicons/icons';
 import './Navigation.css';
   
   const Navigation = () => {
@@ -13,10 +13,16 @@ import './Navigation.css';
                 <IonTabButton className='ion-tab-button' tab="tab1" href="/annonce">
                     <IonIcon aria-hidden="true" icon={home} />
                 </IonTabButton>
-                <IonTabButton className='ion-tab-button' tab="tab2" href="/notification">
+                <IonTabButton className='ion-tab-button' tab="tab2" onClick={() => window.open("https://www.pinterest.fr/", "_blank")}>
+                    <IonIcon aria-hidden="true" icon={chatbubble} />
+                </IonTabButton>
+                <IonTabButton className='ion-tab-button' tab="tab3" href="/add">
+                    <IonIcon aria-hidden="true" icon={add} />
+                </IonTabButton>
+                <IonTabButton className='ion-tab-button' tab="tab4" href="/notification">
                     <IonIcon aria-hidden="true" icon={notifications} />
                 </IonTabButton>
-                <IonTabButton className='ion-tab-button' tab="tab3" href="/profil">
+                <IonTabButton className='ion-tab-button' tab="tab5" href="/profil">
                     <IonIcon aria-hidden="true" icon={person} />
                 </IonTabButton>
             </IonTabBar>
