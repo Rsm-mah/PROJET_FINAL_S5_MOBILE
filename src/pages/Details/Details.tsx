@@ -27,9 +27,9 @@ const Details = () => {
           <section className='ion-content-body-detail'>
             <div className='detail-header'>
               <div className='icon-arrowBack' >
-              <Link to="/annonce">
-                  <IonIcon aria-hidden="true" icon={arrowBack} />
-              </Link>
+                <Link to="/annonce">
+                    <IonIcon aria-hidden="true" icon={arrowBack} />
+                </Link>
               </div>
               <div className="title">
                 <h2>Details</h2>

@@ -10,6 +10,23 @@ ion-content .ion-content-body-profil {
     top: 0;
     background: #fff;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+
+    .title {
+        width: 100%;
+        margin-left: 1.8cm;
+    }
+
+    .icon-create {
+        width: 25%;
+        ion-icon {
+            font-size: 25px;
+            position: relative;
+            top: 18px;
+            color: #2f3032;
+        }
+    }
 }
 
 .ion-content-body-profil .profil {

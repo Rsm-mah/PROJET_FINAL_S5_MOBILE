@@ -1,0 +1,81 @@
+ion-content .ion-content-body-modif-profil {
+    height: 100vh;
+    overflow: auto;
+    text-align: center;
+}
+
+.ion-content-body-modif-profil .profil-modif-header {
+    display: flex;
+
+    .icon-arrowBack {
+        width: 25%;
+
+        ion-icon {
+            font-size: 25px;
+            position: relative;
+            top: 30px;
+            color: #2f3032;
+        }
+    }
+
+    .title {
+        font-size: 16px;
+        font-weight: bold;
+        font-family: 'Montserat';
+        position: relative;
+        left: 25px;
+        top: 10px;
+    }
+}
+
+.ion-content-body-modif-profil .body_profil_modif {
+    display: flex;
+    justify-content: center;
+    margin-top: 1cm;
+
+    .profil-picture {
+        display: flex;
+        justify-content: center;
+    }
+
+    .modif-profil-picture {
+        margin-top: 0.5cm;
+        margin-bottom: 1cm;
+    }
+
+    .input-group {
+        .input-nom,.input-prenom,.select-genre,.input-adresse,.input-contact {
+            margin-bottom: 1.5cm;
+
+            input {
+                letter-spacing: 1px;
+                color: #2f3032;
+                background-color: transparent;
+                border: none;
+                border-bottom: groove 1px #2f3032;
+                width: 8.5cm;
+                outline: none;
+                font-size: 16px;
+                padding-bottom: 5px;
+                text-align: left;
+            }
+        
+            input::placeholder {
+                color: #2f3032;
+            }
+        }
+    }
+
+    .button {
+        position: absolute;
+        bottom: 15px;
+        text-align: center;
+        width: 8.5cm;
+        background-color: #2f3032;
+        button {
+            background-color: #2f3032;
+            color: #fff;
+            height: 2rem;
+        }
+    }
+}

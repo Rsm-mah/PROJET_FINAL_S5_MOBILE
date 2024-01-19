@@ -8,21 +8,12 @@ import {
     IonContent
 } from '@ionic/react';
 import './Profil.css';
+import { createOutline,listOutline,checkmarkCircleOutline,heartOutline } from 'ionicons/icons';
 import { Link } from 'react-router-dom';
-import { list,checkmarkCircle,heart } from 'ionicons/icons';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 import Navigation from '../../components/Navigation/Navigation';
 import Sary from '../../assets/img/test3.jfif';
   
   const Profil = () => {
-    const [selectedIcon, setSelectedIcon] = useState('');
-
-    const handleIconClick = (iconName : string) => {
-        console.log("eto");
-        setSelectedIcon(iconName);
-    };
-
     return (
       <IonPage>
           <IonContent className='ion-content' fullscreen={true}>
@@ -30,6 +21,11 @@ import Sary from '../../assets/img/test3.jfif';
                 <div className='profil-header'>
                     <div className="title">
                         <h2>Profil</h2>
+                    </div>
+                    <div className='icon-create' >
+                        <Link to="/modifprofil">
+                            <IonIcon aria-hidden="true" icon={createOutline} />
+                        </Link>
                     </div>
                 </div>
 
@@ -42,9 +38,6 @@ import Sary from '../../assets/img/test3.jfif';
                     <div className='profil-name'>
                         <h2>RASAMISOA Mahefa</h2>
                     </div>
-                    {/* <div className="camera-icon">
-                        <IonIcon icon={camera}></IonIcon>
-                    </div> */}
                 </div>
                 
                 <div className="stats">
@@ -67,13 +60,13 @@ import Sary from '../../assets/img/test3.jfif';
                 <div className="swiper">
                 <IonSegment color="dark" value="dark">
                     <IonSegmentButton value="dark">
-                        <IonIcon icon={list}></IonIcon>
+                        <IonIcon icon={listOutline}></IonIcon>
                     </IonSegmentButton>
                     <IonSegmentButton value="checkmarkCircle">
-                        <IonIcon icon={checkmarkCircle}></IonIcon>
+                        <IonIcon icon={checkmarkCircleOutline}></IonIcon>
                     </IonSegmentButton>
                     <IonSegmentButton value="heart">
-                        <IonIcon icon={heart}></IonIcon>
+                        <IonIcon icon={heartOutline}></IonIcon>
                     </IonSegmentButton>
                 </IonSegment>
                 </div>
