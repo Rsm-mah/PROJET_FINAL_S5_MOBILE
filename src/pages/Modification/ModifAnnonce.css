@@ -44,6 +44,7 @@ ion-content .ion-content-body-modif {
 .ion-content-body-modif .body_modif .input-group .input-kilometrage,
 .ion-content-body-modif .body_modif .input-group .input-matricule,
 .ion-content-body-modif .body_modif .input-group .input-place,
+.ion-content-body-modif .body_modif .input-group .input-couleur,
 .ion-content-body-modif .body_modif .input-group .select-couleur {
     margin-bottom: 1.5cm;
 

@@ -12,6 +12,7 @@ import { SelectP } from '../../components/Select/SelectP';
   const AjoutAnnonceTwo = () => {
     const [selectedOrigine, setSelectedOrigine] = useState('');
     const [selectedEnergie, setSelectedEnergie] = useState('');
+    const [selectedCouleur, setSelectedCouleur] = useState('');
 
     return (
       <IonPage>
@@ -33,6 +34,10 @@ import { SelectP } from '../../components/Select/SelectP';
 
                                 <div className="select-energie">
                                     <SelectP title="ENERGIE" options={['ELECTRIQUE','HYBRIDE']} selectedValue={selectedEnergie} onValueChange={setSelectedEnergie}/>
+                                </div>
+
+                                <div className="select-couleur">
+                                    <SelectP title="COULEUR" options={['NOIR','ROUGE']} selectedValue={selectedCouleur} onValueChange={setSelectedCouleur}/>
                                 </div>
 
                                 <div className="input-place">

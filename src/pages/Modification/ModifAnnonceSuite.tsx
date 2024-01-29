@@ -7,9 +7,11 @@ import {
 import { Link } from 'react-router-dom';
 import { arrowBack } from 'ionicons/icons';
 import './ModifAnnonce.css';
+import { SelectP } from '../../components/Select/SelectP';
   
   const ModifAnnonceSuite = () => {
     const [isButtonClicked, setIsButtonClicked] = useState(false);
+    const [selectedCouleur, setSelectedCouleur] = useState('');
 
     const handleClick = () => {
         setIsButtonClicked(true);
@@ -40,6 +42,10 @@ import './ModifAnnonce.css';
                                 <div className="input-group">
                                     <div className="input-month">
                                         <input type="month" />
+                                    </div>
+
+                                    <div className="select-couleur">
+                                        <SelectP title="COULEUR" options={['NOIR','ROUGE']} selectedValue={selectedCouleur} onValueChange={setSelectedCouleur}/>
                                     </div>
 
                                     <div className="input-place">
