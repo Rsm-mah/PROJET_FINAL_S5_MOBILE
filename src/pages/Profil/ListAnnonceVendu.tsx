@@ -1,11 +1,14 @@
 import './Profil.css';
-import Sary from '../../assets/img/test3.jfif';
+import { Link } from 'react-router-dom';
+import Sary from '../../assets/img/system vega_ a car.jpeg';
   
   const ListAnnonceVendu = () => {
     return (
         <div className="listAnnonce">
             <div className="annonce">
-                <img src={Sary} alt="" />
+                <Link to="/detailannonceprofil">
+                    <img src={Sary} alt="" />
+                </Link>
             </div>
         </div>
     );

@@ -1,41 +1,39 @@
 import './Profil.css';
-import Sary from '../../assets/img/test3.jfif';
+import { Link } from 'react-router-dom';
+import Sary from '../../assets/img/Audi Q3 2020.jpeg';
   
   const ListAnnonceProfil = () => {
     return (
         <div className="listAnnonce">
             <div className="annonce">
-                <img src={Sary} alt="" />
+                <Link to="/detailannonceprofil">
+                    <img src={Sary} alt="" />
+                </Link>
             </div>
             <div className="annonce">
-                <img src={Sary} alt="" />
+                <Link to="/detailannonceprofil">
+                    <img src={Sary} alt="" />
+                </Link>
             </div>
             <div className="annonce">
-                <img src={Sary} alt="" />
+                <Link to="/detailannonceprofil">
+                    <img src={Sary} alt="" />
+                </Link>
             </div>
             <div className="annonce">
-                <img src={Sary} alt="" />
+                <Link to="/detailannonceprofil">
+                    <img src={Sary} alt="" />
+                </Link>
             </div>
             <div className="annonce">
-                <img src={Sary} alt="" />
+                <Link to="/detailannonceprofil">
+                    <img src={Sary} alt="" />
+                </Link>
             </div>
             <div className="annonce">
-                <img src={Sary} alt="" />
-            </div>
-            <div className="annonce">
-                <img src={Sary} alt="" />
-            </div>
-            <div className="annonce">
-                <img src={Sary} alt="" />
-            </div>
-            <div className="annonce">
-                <img src={Sary} alt="" />
-            </div>
-            <div className="annonce">
-                <img src={Sary} alt="" />
-            </div>
-            <div className="annonce">
-                <img src={Sary} alt="" />
+                <Link to="/detailannonceprofil">
+                    <img src={Sary} alt="" />
+                </Link>
             </div>
         </div>
     );

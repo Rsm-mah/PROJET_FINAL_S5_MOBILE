@@ -74,11 +74,11 @@ ion-content .ion-content-body-modif-profil {
         position: absolute;
         bottom: 15px;
         text-align: center;
-        width: 8.5cm;
-        background-color: #2f3032;
+        margin-bottom: 15px;
         button {
             background-color: #2f3032;
             color: #fff;
+            width: 8.5cm;
             height: 2rem;
         }
     }

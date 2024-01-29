@@ -1,0 +1,88 @@
+ion-content .ion-content-body-annonce-profil {
+    height: 100vh;
+    overflow: auto;
+}
+
+.detail-header {
+    width: 100%;
+    height: 75px;
+    position: fixed;
+    top: 0;
+    background: #fff;
+
+    .icon-arrowBack {
+        width: 25%;
+
+        ion-icon {
+            font-size: 25px;
+            position: relative;
+            left: 30px;
+            top: 30px;
+            color: #2f3032;
+        }
+    }
+}
+
+.detail-picture {
+    margin-top: 2.5cm;
+    text-align: center;
+    img {
+        width: 390px;
+        /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    }
+}
+
+.details {
+    .voiture-name {
+        padding-left: 20px;
+        h1 {
+            font-weight: bold;
+        }
+    }
+    .voiture-price {
+        padding-left: 20px;
+        h2 {
+            font-weight: bold;
+            margin: 0;
+        }
+    }
+    .voiture-description {
+        p {
+            color: gray;
+            font-size: 16px;
+            padding: 15px 20px 15px 20px;
+            letter-spacing: 1px;
+        }
+    }
+    .voiture-details {
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        justify-content: space-between;
+
+        .propriete {
+            margin-bottom: 20px;
+
+            h4 {
+                font-weight: bold;
+            }
+        
+            p {
+                color: gray;
+                margin: 0;
+            }
+        }
+    }
+}
+
+
+.button {
+    text-align: center;
+    margin-bottom: 15px;
+    button {
+        background-color: #2f3032;
+        color: #fff;
+        width: 10cm;
+        height: 2rem;
+    }
+}

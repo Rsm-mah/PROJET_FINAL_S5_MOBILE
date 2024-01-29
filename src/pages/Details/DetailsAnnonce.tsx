@@ -2,7 +2,7 @@ import React, { useState,useRef,useEffect} from 'react';
 import {IonModal} from '@ionic/react';
 import { Link,useLocation } from 'react-router-dom';
 import './DetailsAnnonce.css';
-import Sary from '../../assets/img/test3.jfif';
+import Sary from '../../assets/img/Audi Q3 2020.jpeg';
   
   const DetailsAnnonce = () => {
     const modal = useRef<HTMLIonModalElement>(null);
@@ -31,7 +31,7 @@ import Sary from '../../assets/img/test3.jfif';
             <div className='voiture-photo'>
                 <img src={Sary} alt="" />
             </div>
-            <IonModal className='ion-modal' ref={modal} trigger="open-modal" isOpen={isModalOpen} initialBreakpoint={0.4} breakpoints={[0.25, 0.4, 0.70]} backdropDismiss={false} backdropBreakpoint={0.5}>
+            <IonModal className='ion-modal' ref={modal} trigger="open-modal" isOpen={isModalOpen} initialBreakpoint={0.4} breakpoints={[0.4, 0.4, 0.70]} backdropDismiss={false} backdropBreakpoint={0.5}>
                 <div className="voiture">
                     <div className="voiture-name">
                         <div className="voiture-name-categorie">
@@ -73,8 +73,9 @@ import Sary from '../../assets/img/test3.jfif';
                             <p>Statut: <span>Disponible</span></p>
                         </div>
                     </div>
-                    <Link to="/modification">
-                        <button className={`modif-button ${isButtonClicked ? 'button-clicked' : ''}`} onClick={handleClick}>MODIFIER</button>
+                    
+                    <Link to="">
+                        <button className={`modif-button ${isButtonClicked ? 'button-clicked' : ''}`} onClick={handleClick}>ACHETER</button>
                     </Link>
                 </div>
             </IonModal>

@@ -24,7 +24,7 @@ import { SelectP } from '../../components/Select/SelectP';
             <section className='ion-content-body-modif'>
                 <div className='modif-header'>
                     <div className='icon-arrowBack'>
-                        <Link to="/details">
+                        <Link to="/detailannonceprofil">
                             <IonIcon aria-hidden="true" icon={arrowBack} />
                         </Link>
                     </div>
@@ -68,7 +68,7 @@ import { SelectP } from '../../components/Select/SelectP';
                             </div>
 
                             <div className="link">
-                                <Link to="/details" className='link-back'>Annuler</Link>
+                                <Link to="/detailannonceprofil" className='link-back'>Annuler</Link>
                                 <Link to='/modificationsuite' className='link-next'>Suivant</Link>
                             </div>
                         </form>

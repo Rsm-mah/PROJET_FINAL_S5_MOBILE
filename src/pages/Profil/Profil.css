@@ -86,6 +86,7 @@ ion-content .ion-content-body-profil {
         img {
             width: 15vh;
             height: 150px;
+            object-fit: contain;
         }
     }
 }
