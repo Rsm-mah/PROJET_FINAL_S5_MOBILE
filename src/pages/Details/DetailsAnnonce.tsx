@@ -31,7 +31,7 @@ import Sary from '../../assets/img/test3.jfif';
             <div className='voiture-photo'>
                 <img src={Sary} alt="" />
             </div>
-            <IonModal className='ion-modal' ref={modal} trigger="open-modal" isOpen={isModalOpen} initialBreakpoint={0.4} breakpoints={[0.25, 0.4, 0.75]} backdropDismiss={false} backdropBreakpoint={0.5}>
+            <IonModal className='ion-modal' ref={modal} trigger="open-modal" isOpen={isModalOpen} initialBreakpoint={0.4} breakpoints={[0.25, 0.4, 0.70]} backdropDismiss={false} backdropBreakpoint={0.5}>
                 <div className="voiture">
                     <div className="voiture-name">
                         <div className="voiture-name-categorie">
