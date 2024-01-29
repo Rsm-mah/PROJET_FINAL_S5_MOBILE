@@ -12,8 +12,19 @@ import { createOutline,listOutline,checkmarkCircleOutline,heartOutline } from 'i
 import { Link } from 'react-router-dom';
 import Navigation from '../../components/Navigation/Navigation';
 import Sary from '../../assets/img/test3.jfif';
+import ListAnnonceProfil from './ListAnnonceProfil';
+import ListAnnonceFavoris from './ListAnnonceFavoris';
+import ListAnnonceVendu from './ListAnnonceVendu';
+import ProfilStats from './ProfilStats';
   
   const Profil = () => {
+    const [selectedSegment, setSelectedSegment] = useState<string>('dark');
+
+    const handleSegmentChange = (e: CustomEvent) => {
+        const newSegment = e.detail.value as string;
+        setSelectedSegment(newSegment || 'dark');
+    };
+    
     return (
       <IonPage>
           <IonContent className='ion-content' fullscreen={true}>
@@ -40,72 +51,25 @@ import Sary from '../../assets/img/test3.jfif';
                     </div>
                 </div>
                 
-                <div className="stats">
-                    <div className="stats-annonce">
-                        <h2>20</h2>
-                        <p>Annonces</p>
-                    </div>
-                    <hr />
-                    <div className="stats-annonce">
-                        <h2>3</h2>
-                        <p>Vendus</p>
-                    </div>
-                    <hr />
-                    <div className="stats-annonce">
-                        <h2>0</h2>
-                        <p>Favoris</p>
-                    </div>
-                </div>
+                <ProfilStats/>
 
                 <div className="swiper">
-                <IonSegment color="dark" value="dark">
-                    <IonSegmentButton value="dark">
-                        <IonIcon icon={listOutline}></IonIcon>
-                    </IonSegmentButton>
-                    <IonSegmentButton value="checkmarkCircle">
-                        <IonIcon icon={checkmarkCircleOutline}></IonIcon>
-                    </IonSegmentButton>
-                    <IonSegmentButton value="heart">
-                        <IonIcon icon={heartOutline}></IonIcon>
-                    </IonSegmentButton>
-                </IonSegment>
+                    <IonSegment color="dark" value={selectedSegment} onIonChange={handleSegmentChange}>
+                        <IonSegmentButton value="dark">
+                            <IonIcon icon={listOutline}></IonIcon>
+                        </IonSegmentButton>
+                        <IonSegmentButton value="checkmarkCircle">
+                            <IonIcon icon={checkmarkCircleOutline}></IonIcon>
+                        </IonSegmentButton>
+                        <IonSegmentButton value="heart">
+                            <IonIcon icon={heartOutline}></IonIcon>
+                        </IonSegmentButton>
+                    </IonSegment>
                 </div>
 
-                <div className="listAnnonce">
-                    <div className="annonce">
-                        <img src={Sary} alt="" />
-                    </div>
-                    <div className="annonce">
-                        <img src={Sary} alt="" />
-                    </div>
-                    <div className="annonce">
-                        <img src={Sary} alt="" />
-                    </div>
-                    <div className="annonce">
-                        <img src={Sary} alt="" />
-                    </div>
-                    <div className="annonce">
-                        <img src={Sary} alt="" />
-                    </div>
-                    <div className="annonce">
-                        <img src={Sary} alt="" />
-                    </div>
-                    <div className="annonce">
-                        <img src={Sary} alt="" />
-                    </div>
-                    <div className="annonce">
-                        <img src={Sary} alt="" />
-                    </div>
-                    <div className="annonce">
-                        <img src={Sary} alt="" />
-                    </div>
-                    <div className="annonce">
-                        <img src={Sary} alt="" />
-                    </div>
-                    <div className="annonce">
-                        <img src={Sary} alt="" />
-                    </div>
-                </div>
+                {selectedSegment === 'dark' && <ListAnnonceProfil />}
+                {selectedSegment === 'checkmarkCircle' && <ListAnnonceVendu />}
+                {selectedSegment === 'heart' && <ListAnnonceFavoris />}
 
                 <Navigation/>
             </section>
