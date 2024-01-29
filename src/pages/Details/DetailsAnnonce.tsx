@@ -36,7 +36,6 @@ import Sary from '../../assets/img/test3.jfif';
                     <div className="voiture-name">
                         <div className="voiture-name-categorie">
                             <h1>Peugeot 3008</h1>
-                            <p>SUV</p>
                         </div>
                         <div className="voiture-price">
                             <h2>100.000 Ar</h2>
@@ -54,18 +53,18 @@ import Sary from '../../assets/img/test3.jfif';
                         <h1>Propriétés</h1>
                         <div className="propriete">
                             <div className="prop-left">
-                                <p>Moteur: <span>120 hp</span></p>
-                                <p>Capacité: <span>1580 cc</span></p>
-                                <p>Vitesse: <span>Manuelle</span></p>
+                                <p>Categorie: <span>SUV</span></p>
+                                <p>Transmission: <span>Manuelle</span></p>
                                 <p>Origine: <span>France</span></p>
                                 <p>Kilometrage: <span>1000</span></p>
+                                <p>Energie: <span></span></p>
                             </div>
                             <div className="prop-right">
+                                <p>Modele: <span></span></p>
+                                <p>Annee: <span>2024</span></p>
                                 <p>Carburant: <span>Diesel</span></p>
-                                <p>Traction: <span>4x2</span></p>
-                                <p>Etat: <span>8</span></p>
                                 <p>Places: <span>4</span></p>
-                                <p>Couleur: <span>noir</span></p>
+                                <p>Matricule: <span>AAAA</span></p>
                             </div>
                         </div>
                         <div className='statut'>
