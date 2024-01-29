@@ -13,6 +13,7 @@ import Sary from '../../assets/img/test3.jfif';
   
   const ProfilModif = () => {
     const [isButtonClicked, setIsButtonClicked] = useState(false);
+    const [selectedGenre, setSelectedGenre] = useState('');
 
     const handleClick = () => {
         setIsButtonClicked(true);
@@ -61,7 +62,7 @@ import Sary from '../../assets/img/test3.jfif';
                                 </div>
 
                                 <div className="select-genre">
-                                    <SelectP title="GENRE" options={['HOMME','FEMME']}/>
+                                    <SelectP title="GENRE" options={['HOMME','FEMME']} selectedValue={selectedGenre} onValueChange={setSelectedGenre}/>
                                 </div>
 
                                 <div className="input-adresse">
