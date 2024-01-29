@@ -75,7 +75,7 @@ import Sary from '../../assets/img/Audi Q3 2020.jpeg';
                     </div>
                     
                     <Link to="">
-                        <button className={`modif-button ${isButtonClicked ? 'button-clicked' : ''}`} onClick={handleClick}>ACHETER</button>
+                        <button className="achat-button">ACHETER</button>
                     </Link>
                 </div>
             </IonModal>
