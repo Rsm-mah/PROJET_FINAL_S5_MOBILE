@@ -37,13 +37,12 @@ ion-content .ion-content-body-modif {
 .ion-content-body-modif .body_modif .input-group .select-categorie,
 .ion-content-body-modif .body_modif .input-group .select-marque,
 .ion-content-body-modif .body_modif .input-group .select-modele,
-.ion-content-body-modif .body_modif .input-group .input-moteur,
-.ion-content-body-modif .body_modif .input-group .input-capacite,
+.ion-content-body-modif .body_modif .input-group .input-month,
 .ion-content-body-modif .body_modif .input-group .select-vitesse,
 .ion-content-body-modif .body_modif .input-group .select-origine,
 .ion-content-body-modif .body_modif .input-group .select-carburant,
-.ion-content-body-modif .body_modif .input-group .input-traction,
-.ion-content-body-modif .body_modif .input-group .input-etat,
+.ion-content-body-modif .body_modif .input-group .input-kilometrage,
+.ion-content-body-modif .body_modif .input-group .input-matricule,
 .ion-content-body-modif .body_modif .input-group .input-place,
 .ion-content-body-modif .body_modif .input-group .select-couleur {
     margin-bottom: 1.5cm;

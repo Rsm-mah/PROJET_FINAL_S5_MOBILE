@@ -10,6 +10,13 @@ import './ModifAnnonce.css';
 import { SelectP } from '../../components/Select/SelectP';
   
   const ModifAnnonce = () => {
+    const [selectedCategorie, setSelectedCategorie] = useState('');
+    const [selectedMarque, setSelectedMarque] = useState('');
+    const [selectedModele, setSelectedModele] = useState('');
+    const [selectedCarburant, setSelectedCarburant] = useState('');
+    const [selectedOrigine, setSelectedOrigine] = useState('');
+    const [selectedTransmission, setSelectedTransmission] = useState('');
+    const [selectedEnergie, setSelectedEnergie] = useState('');
 
     return (
       <IonPage>
@@ -31,33 +38,32 @@ import { SelectP } from '../../components/Select/SelectP';
                         <form action="" method="post">
                             <div className="input-group">
                                 <div className="select-categorie">
-                                    <SelectP title="CATEGORIE" options={['CAT 1','CAT 2','CAT 3','CAT 4']}/>
+                                    <SelectP title="CATEGORIE" options={['CAT 1','CAT 2','CAT 3','CAT 4']} selectedValue={selectedCategorie} onValueChange={setSelectedCategorie}/>
                                 </div>
 
                                 <div className="select-marque">
-                                    <SelectP title="MARQUE" options={['MARQUE 1','MARQUE 1','MARQUE 1','MARQUE 1']}/>
+                                    <SelectP title="MARQUE" options={['MARQUE 1','MARQUE 1','MARQUE 1','MARQUE 1']} selectedValue={selectedMarque} onValueChange={setSelectedMarque}/>
                                 </div>
 
                                 <div className="select-modele">
-                                    <SelectP title="MODELE" options={['MODELE 1','MODELE 1','MODELE 1','MODELE 1']}/>
+                                    <SelectP title="MODELE" options={['MODELE 1','MODELE 1','MODELE 1','MODELE 1']} selectedValue={selectedModele} onValueChange={setSelectedModele}/>
                                 </div>
 
                                 <div className="select-vitesse">
-                                    <SelectP title="VITESSE" options={['MANUELLE','AUTOMATIQUE']}/>
+                                    <SelectP title="TRANSMISSION" options={['MANUELLE','AUTOMATIQUE']} selectedValue={selectedTransmission} onValueChange={setSelectedTransmission}/>
                                 </div>
 
                                 <div className="select-origine">
-                                    <SelectP title="ORIGINE" options={['FRANCE','ALLEMAGNE']}/>
+                                    <SelectP title="ORIGINE" options={['FRANCE','ALLEMAGNE']} selectedValue={selectedOrigine} onValueChange={setSelectedOrigine}/>
                                 </div>
 
                                 <div className="select-carburant">
-                                    <SelectP title="CARBURANT" options={['ESSENCE','DIESEL']}/>
+                                    <SelectP title="CARBURANT" options={['ESSENCE','DIESEL']} selectedValue={selectedCarburant} onValueChange={setSelectedCarburant}/>
                                 </div>
 
-                                <div className="select-couleur">
-                                    <SelectP title="COULEUR" options={['NOIR','ROUGE']}/>
+                                <div className="select-carburant">
+                                    <SelectP title="ENERGIE" options={['ELECTRIQUE','HYBRIDE']} selectedValue={selectedEnergie} onValueChange={setSelectedEnergie}/>
                                 </div>
-
                                 
                             </div>
 

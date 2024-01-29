@@ -38,24 +38,20 @@ import './ModifAnnonce.css';
                         <div className="formulaire">
                             <form action="" method="post">
                                 <div className="input-group">
-                                    <div className="input-moteur">
-                                        <input type="text" placeholder="MOTEUR" required />
-                                    </div>
-
-                                    <div className="input-capacite">
-                                        <input type="text" placeholder="CAPACITE" required />
-                                    </div>
-
-                                    <div className="input-traction">
-                                        <input type="text" placeholder="TRACTION" required />
-                                    </div>
-
-                                    <div className="input-etat">
-                                        <input type="text" placeholder="ETAT" required />
+                                    <div className="input-month">
+                                        <input type="month" />
                                     </div>
 
                                     <div className="input-place">
                                         <input type="number" placeholder="PLACES" required />
+                                    </div>
+
+                                    <div className="input-matricule">
+                                        <input type="text" placeholder="MATRICULE" required />
+                                    </div>
+
+                                    <div className="input-kilometrage">
+                                        <input type="text" placeholder="KILOMETRAGE" required />
                                     </div>
 
                                     
