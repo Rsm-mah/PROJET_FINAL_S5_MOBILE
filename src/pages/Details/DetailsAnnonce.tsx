@@ -54,6 +54,7 @@ import Sary from '../../assets/img/test3.jfif';
                         <div className="propriete">
                             <div className="prop-left">
                                 <p>Categorie: <span>SUV</span></p>
+                                <p>Marque: <span>Peugeot</span></p>
                                 <p>Transmission: <span>Manuelle</span></p>
                                 <p>Origine: <span>France</span></p>
                                 <p>Kilometrage: <span>1000</span></p>
@@ -65,6 +66,7 @@ import Sary from '../../assets/img/test3.jfif';
                                 <p>Carburant: <span>Diesel</span></p>
                                 <p>Places: <span>4</span></p>
                                 <p>Matricule: <span>AAAA</span></p>
+                                <p>Couleur: <span>Noir</span></p>
                             </div>
                         </div>
                         <div className='statut'>
