@@ -26,6 +26,7 @@ import AjoutAnnonceTwo from './pages/AjoutAnnonce/AjoutAnnonceTwo';
 import AjoutAnnonceThree from './pages/AjoutAnnonce/AjoutAnnonceThree';
 import AjoutAnnonceFour from './pages/AjoutAnnonce/AjoutAnnonceFour';
 import AjoutAnnonceFive from './pages/AjoutAnnonce/AjoutAnnonceFive';
+import DetailAnnonceProfil from './pages/DetailAnnonceProfil/DetailAnnonceProfil';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -111,6 +112,9 @@ const App: React.FC = () => (
           </Route>
           <Route exact path="/ajoutannoncefive">
             <AjoutAnnonceFive />
+          </Route>
+          <Route exact path="/detailannonceprofil">
+            <DetailAnnonceProfil />
           </Route>
           <Route exact path="/">
             <Redirect to="/index" />

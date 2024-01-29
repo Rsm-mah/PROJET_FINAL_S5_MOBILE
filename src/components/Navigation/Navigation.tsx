@@ -16,7 +16,7 @@ import './Navigation.css';
                 <IonTabButton className='ion-tab-button' tab="tab2" onClick={() => window.open("https://www.pinterest.fr/", "_blank")}>
                     <IonIcon aria-hidden="true" icon={chatbubble} />
                 </IonTabButton>
-                <IonTabButton className='ion-tab-button' tab="tab3" href="/add">
+                <IonTabButton className='ion-tab-button' tab="tab3" href="/ajoutannonce">
                     <IonIcon aria-hidden="true" icon={add} />
                 </IonTabButton>
                 <IonTabButton className='ion-tab-button' tab="tab4" href="/notification">
