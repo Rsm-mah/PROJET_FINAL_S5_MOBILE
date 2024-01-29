@@ -2,7 +2,7 @@ import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,I
 import { Link } from 'react-router-dom';
 import './Annonce.css';
 import { informationCircle } from 'ionicons/icons';
-import Sary from '../../assets/img/test3.jfif';
+import Sary from '../../assets/img/Audi Q3 2020.jpeg';
   
   const ListAnnonce = () => {
 
@@ -15,9 +15,9 @@ import Sary from '../../assets/img/test3.jfif';
                     <IonCardSubtitle>100.000 Ar</IonCardSubtitle>
 
                     <IonCardContent>
-                        Disponible
+                        Statut : Disponible
                         <Link to="/details">
-                            <IonIcon icon={informationCircle} />
+                            Voir Détail
                         </Link>
                     </IonCardContent>
                 </IonCardHeader>

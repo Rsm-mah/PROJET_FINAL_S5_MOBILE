@@ -38,13 +38,6 @@ ion-content .ion-content-body-annonce {
 }
 
 .ion-content-body-annonce .listAnnonce .annonce ion-card {
-    display: flex;
-
-    img {
-        width: 35%;
-        height: 183px;
-    }
-
     ion-card-header {
         text-align: start;
 
@@ -55,9 +48,8 @@ ion-content .ion-content-body-annonce {
             color: gray;
         }
         ion-card-content {
-            width: 5.9cm;
             padding: 0;
-            padding-top: 78px;
+            padding-top: 10px;
             color: #2f3032;
             font-weight: bold;
             display: flex;
@@ -65,9 +57,13 @@ ion-content .ion-content-body-annonce {
 
             a {
                 color: #2f3032;
-                position: relative;
-                top: 3px;
-                font-size: 16px;
+                text-decoration: none;
+                border: groove 1px;
+                border-radius: 20px;
+                width: 3cm;
+                text-align: center;
+                background-color: #2f3032;
+                color: #fff;
             }
         }
     }   
