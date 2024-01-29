@@ -3,12 +3,9 @@
 }
 
 .details .voiture-photo {
-    margin-top: 20px;
-    text-align: center;
-
     img {
         object-fit: contain;
-        height: 615px;
+        height: 500px;
     }
 }
 
