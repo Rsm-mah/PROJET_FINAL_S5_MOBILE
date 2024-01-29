@@ -1,14 +1,26 @@
-import React, { useState} from 'react';
+import React, { useState, ChangeEvent} from 'react';
 import {
     IonPage,
     IonIcon,
     IonContent
 } from '@ionic/react';
 import { Link } from 'react-router-dom';
-import { arrowBack  } from 'ionicons/icons';
+import { imageOutline  } from 'ionicons/icons';
 import './AjoutAnnonce.css';
   
   const AjoutAnnonceFour = () => {
+    const [selectedFile, setSelectedFile] = useState<string>('');
+
+    const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const fileInput = event.target;
+    if (fileInput.files && fileInput.files.length > 0) {
+        const fileName = fileInput.files[0].name;
+        setSelectedFile(fileName);
+    } else {
+        setSelectedFile('');
+    }
+    };
+    
     return (
       <IonPage>
           <IonContent className='ion-content' fullscreen={true}>
@@ -24,8 +36,8 @@ import './AjoutAnnonce.css';
                         <form action="" method="post">
                             <div className="input-group">
                                 <div className="input-file">
-                                    <label htmlFor="file">PHOTO</label>
-                                    <input type="file" id="file" accept="image/*"/>
+                                    <label htmlFor="file">PHOTO {selectedFile && `(${selectedFile})`} <IonIcon icon={imageOutline}></IonIcon></label>
+                                    <input type="file" id="file" accept="image/*" onChange={handleFileChange}/>
                                 </div>
 
                                 <div className="input-description">
