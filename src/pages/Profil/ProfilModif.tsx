@@ -49,7 +49,7 @@ import Sary from '../../assets/img/test3.jfif';
 
                             <div className='modif-profil-picture'>
                                 <label htmlFor='file'>Modifier la photo</label>
-                                <input type="file" id='file'/>
+                                <input type="file" id='file' accept="image/*"/>
                             </div>
 
                             <div className="input-group">

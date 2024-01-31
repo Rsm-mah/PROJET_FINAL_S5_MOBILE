@@ -43,7 +43,7 @@ import { SelectP } from '../../components/Select/SelectP';
                                 </div>
 
                                 <div className="input-month">
-                                    <input type="month" required />
+                                    <input type="month" placeholder='ANNEE' required />
                                 </div>
 
                                 <div className="select-carburant">
