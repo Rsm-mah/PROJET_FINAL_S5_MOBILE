@@ -27,9 +27,9 @@ import Navigation from '../../components/Navigation/Navigation';
                         onSwiper={(swiper) => console.log(swiper)}
                       >
                         <SwiperSlide>Tous</SwiperSlide>
-                        <SwiperSlide>Nouveau</SwiperSlide>
-                        <SwiperSlide>Récent</SwiperSlide>
-                        <SwiperSlide>Slide 4</SwiperSlide>
+                        <SwiperSlide>Nouveaux</SwiperSlide>
+                        <SwiperSlide>Récents</SwiperSlide>
+                        <SwiperSlide>Meilleurs prix</SwiperSlide>
                       </Swiper>
                     </div>
                 </div>

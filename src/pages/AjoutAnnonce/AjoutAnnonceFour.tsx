@@ -38,6 +38,7 @@ import './AjoutAnnonce.css';
                                 <div className="input-file">
                                     <label htmlFor="file">PHOTO {selectedFile && `(${selectedFile})`} <IonIcon icon={imageOutline}></IonIcon></label>
                                     <input type="file" id="file" accept="image/*" onChange={handleFileChange}/>
+                                    {/* <p className="file-warning">Assurez-vous que la photo a une dimension de 735 x 490 pixels.</p> */}
                                 </div>
 
                                 <div className="input-description">
