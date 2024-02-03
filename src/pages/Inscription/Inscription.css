@@ -1,5 +1,5 @@
 ion-content .ion-content-body-inscription {
-    height: 100vh;
+    height: 110vh;
     overflow: auto;
     background-color: #2f3032;
     display: flex;
@@ -7,22 +7,12 @@ ion-content .ion-content-body-inscription {
     text-align: center;
 }
 
-.body_inscription .logo {
-    margin-top: 2.5cm;
-    margin-bottom: 2.5cm;
+.body_inscription .logo img{
+    width: 35vh;
 }
 
-.body_inscription .logo h1{
-    color: #e5e1de;
-}
-
-.body_inscription .logo_next {
-    margin-top: 4cm;
-    margin-bottom: 4cm;
-}
-
-.body_inscription .logo_next h1{
-    color: #e5e1de;
+.body_inscription .logo_next img{
+    width: 35vh;
 }
 
 .body_inscription .body_insc .input-group .input-email,
@@ -88,7 +78,7 @@ ion-content .ion-content-body-inscription {
     color: #2f3032;
     border-radius: 4px;
     font-weight: bold;
-    margin-bottom: 1.5cm;
+    margin-bottom: 1cm;
     font-size: 16px;
     transition: 0.4s ease-in-out;
 }

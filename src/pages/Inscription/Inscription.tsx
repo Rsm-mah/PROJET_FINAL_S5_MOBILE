@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { IonContent, IonPage } from '@ionic/react';
 import { Link } from 'react-router-dom';
 import './Inscription.css';
+import Sary from '../../assets/img/2-removebg-preview.png';
 
 const Inscription = () => {
   return (
@@ -10,8 +11,7 @@ const Inscription = () => {
             <section className='ion-content-body-inscription'>
                 <div className="body_inscription">
                     <div className="logo">
-                        <img src="" alt="" />
-                        <h1>INSCRIPTION</h1>
+                        <img src={Sary} alt="" />
                     </div>
 
                     <div className="body_insc">
@@ -55,7 +55,7 @@ const Inscription = () => {
 
                         <div className="login-link">
                             <Link to="/login">
-                                <button>S'inscrire</button>
+                                <button>Se Connceter</button>
                             </Link>
                         </div>
                     </div>
