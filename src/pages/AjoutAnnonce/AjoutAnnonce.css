@@ -36,7 +36,7 @@ ion-content .ion-content-body-ajout {
 
 .ion-content-body-ajout .body_ajout .input-group .select-categorie,
 .ion-content-body-ajout .body_ajout .input-group .select-marque,
-.ion-content-body-ajout .body_ajout .input-group .select-modele,
+.ion-content-body-ajout .body_ajout .input-group .input-modele,
 .ion-content-body-ajout .body_ajout .input-group .input-month,
 .ion-content-body-ajout .body_ajout .input-group .input-kilometrage,
 .ion-content-body-ajout .body_ajout .input-group .select-transmission,
@@ -116,18 +116,22 @@ ion-content .ion-content-body-ajout {
 .ion-content-body-ajout .link .link-back {
     color: #2f3032;
     background-color: #fff;
+    text-decoration: none;
+    border: 1px groove;
+    border-color: #2f3032;
+    letter-spacing: 1px;
+    width: 4cm;
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 1px;
 }
 
 .ion-content-body-ajout .link .link-next {
     background-color: #2f3032;
     color: #fff;
-}
-
-.ion-content-body-ajout .link a {
     text-decoration: none;
     letter-spacing: 1px;
     width: 4cm;
-    color: #2f3032;
     font-weight: bold;
     font-size: 16px;
     border: 1px groove;
@@ -139,7 +143,7 @@ ion-content .ion-content-body-ajout {
     justify-content: space-between;
 }
 
-.ion-content-body-ajout .button a {
+/* .ion-content-body-ajout .button a {
     text-decoration: none;
     letter-spacing: 1px;
     width: 4cm;
@@ -149,7 +153,7 @@ ion-content .ion-content-body-ajout {
     font-size: 16px;
     border: 1px groove;
     padding: 3px;
-}
+} */
 
 .ion-content-body-ajout .button-valider {
     letter-spacing: 1px;
