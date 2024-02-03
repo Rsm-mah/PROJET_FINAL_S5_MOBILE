@@ -1,5 +1,14 @@
 ion-content .ion-content-body-inscription {
-    height: 110vh;
+    height: 107vh;
+    overflow: auto;
+    background-color: #2f3032;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+ion-content .ion-content-body-inscription-suite {
+    height: 100vh;
     overflow: auto;
     background-color: #2f3032;
     display: flex;

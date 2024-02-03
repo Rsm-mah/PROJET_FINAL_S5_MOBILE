@@ -16,7 +16,7 @@ const Inscription_suite = () => {
   return (
     <IonPage>
         <IonContent className='ion-content' fullscreen={true}>
-            <section className='ion-content-body-inscription'>
+            <section className='ion-content-body-inscription-suite'>
                 <div className="body_inscription">
                     <span className='logo_next'>
                         <div className="logo_next">
