@@ -22,10 +22,6 @@ import Notification from './pages/Notification/Notification';
 import Profil from './pages/Profil/Profil';
 import ProfilModif from './pages/Profil/ProfilModif';
 import AjoutAnnonce from './pages/AjoutAnnonce/AjoutAnnonce';
-import AjoutAnnonceTwo from './pages/AjoutAnnonce/AjoutAnnonceTwo';
-import AjoutAnnonceThree from './pages/AjoutAnnonce/AjoutAnnonceThree';
-import AjoutAnnonceFour from './pages/AjoutAnnonce/AjoutAnnonceFour';
-import AjoutAnnonceFive from './pages/AjoutAnnonce/AjoutAnnonceFive';
 import DetailAnnonceProfil from './pages/DetailAnnonceProfil/DetailAnnonceProfil';
 
 /* Core CSS required for Ionic components to work properly */
@@ -100,18 +96,6 @@ const App: React.FC = () => (
           </Route>
           <Route exact path="/ajoutannonce">
             <AjoutAnnonce />
-          </Route>
-          <Route exact path="/ajoutannoncetwo">
-            <AjoutAnnonceTwo />
-          </Route>
-          <Route exact path="/ajoutannoncethree">
-            <AjoutAnnonceThree />
-          </Route>
-          <Route exact path="/ajoutannoncefour">
-            <AjoutAnnonceFour />
-          </Route>
-          <Route exact path="/ajoutannoncefive">
-            <AjoutAnnonceFive />
           </Route>
           <Route exact path="/detailannonceprofil">
             <DetailAnnonceProfil />
