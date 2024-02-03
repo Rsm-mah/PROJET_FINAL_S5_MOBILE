@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { IonContent, IonInput, IonIcon, IonPage } from '@ionic/react';
+import { IonContent, IonPage } from '@ionic/react';
+import { Link } from 'react-router-dom';
 import './Inscription.css';
 
 const Inscription = () => {
@@ -53,9 +54,9 @@ const Inscription = () => {
                         </div>
 
                         <div className="login-link">
-                            <a href="/login">
-                                <button>Se Connecter</button>
-                            </a>
+                            <Link to="/login">
+                                <button>S'inscrire</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

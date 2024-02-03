@@ -74,3 +74,53 @@ ion-content .ion-content-body-login {
     background-color: transparent;
     letter-spacing: 1px;
 }
+
+@media only screen and (min-width:360px) {
+    .body_login .body_log .input-group .input-password ion-icon {
+        font-size: 16px;
+        position: absolute;
+        margin-top: 5px;
+        right: 0.6cm;
+        color: #e5e1de;
+    }    
+}
+
+@media only screen and (min-width:375px) {
+    .body_login .body_log .input-group .input-password ion-icon {
+        font-size: 16px;
+        position: absolute;
+        margin-top: 5px;
+        right: 0.8cm;
+        color: #e5e1de;
+    }    
+}
+
+@media only screen and (min-width:414px) {
+    .body_login .body_log .input-group .input-password ion-icon {
+        font-size: 16px;
+        position: absolute;
+        margin-top: 5px;
+        right: 1.3cm;
+        color: #e5e1de;
+    }    
+}
+
+@media only screen and (min-width:390px) {
+    .body_login .body_log .input-group .input-password ion-icon {
+        font-size: 16px;
+        position: absolute;
+        margin-top: 5px;
+        right: 1.3cm;
+        color: #e5e1de;
+    }    
+}
+
+@media only screen and (min-width:430px) {
+    .body_login .body_log .input-group .input-password ion-icon {
+        font-size: 16px;
+        position: absolute;
+        margin-top: 5px;
+        right: 1.5cm;
+        color: #e5e1de;
+    }    
+}
