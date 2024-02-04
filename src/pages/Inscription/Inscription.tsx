@@ -9,9 +9,28 @@ const Inscription = () => {
     const [formPage,setFormPage] = useState(0);
     const [passwordVisible, setPasswordVisible] = useState(false);
 
+    const [formData, setFormData] = useState({
+        nom: '',
+        prenom: '',
+        genre: '',
+        date_naissance: '',
+        adresse: '',
+        contact: '',
+        email: '',
+        password: '',
+      });
+
     const togglePasswordVisibility = () => {
         setPasswordVisible((prev) => !prev);
     };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData({
+          ...formData,
+          [name]: value,
+        });
+      };
 
     function Form1(fonction:any) {
         return <>
@@ -19,15 +38,15 @@ const Inscription = () => {
                 <form action="" method="post">
                     <div className="input-group">
                             <div className="input-name">
-                                <input type="text" placeholder="NOM" />
+                                <input type="text" placeholder="NOM" name='nom' onChange={handleChange}/>
                             </div>
                 
                             <div className="input-first-name">
-                                <input type="text" placeholder="PRENOM" />
+                                <input type="text" placeholder="PRENOM" name='prenom' onChange={handleChange}/>
                             </div>
 
                             <div className="input-genre">
-                                <select name="">
+                                <select name="genre" >
                                     <option value="" selected>GENRE</option>
                                     <option value="" >HOMME</option>
                                     <option value="" >FEMME</option>
@@ -35,15 +54,15 @@ const Inscription = () => {
                             </div>
 
                             <div className="input-birthday">
-                                <input type="date" />
+                                <input type="date" name='date_naissance' onChange={handleChange}/>
                             </div>
 
                             <div className="input-adress">
-                                <input type="text" placeholder="ADRESSE" />
+                                <input type="text" placeholder="ADRESSE" name='adresse' onChange={handleChange}/>
                             </div>
 
                             <div className="input-contact">
-                                <input type="text" placeholder="CONTACT" />
+                                <input type="text" placeholder="CONTACT" name='contact' onChange={handleChange}/>
                             </div>
                     </div>
 
@@ -70,13 +89,14 @@ const Inscription = () => {
                 <form action="" method="post">
                     <div className="input-group">
                         <div className="input-email">
-                            <input type="email" placeholder="EMAIL" required />
+                            <input type="email" placeholder="EMAIL" name='email' onChange={handleChange} />
                         </div>
                         <div className="input-password">
                             <input
                                 type={passwordVisible ? 'text' : 'password'}
                                 placeholder="MOT DE PASSE"
-                                required
+                                name='password'
+                                onChange={handleChange}
                             />
                             <IonIcon
                                 icon={passwordVisible ? eye : eyeOff}

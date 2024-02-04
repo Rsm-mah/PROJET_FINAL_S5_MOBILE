@@ -1,5 +1,5 @@
 ion-content .ion-content-body-inscription {
-    height: 107vh;
+    height: 100vh;
     overflow: auto;
     background-color: #fff;
     display: flex;
@@ -17,7 +17,7 @@ ion-content .ion-content-body-inscription-suite {
 }
 
 .body_inscription .logo img{
-    width: 35vh;
+    width: 26vh;
 }
 
 .body_inscription .logo_next img{

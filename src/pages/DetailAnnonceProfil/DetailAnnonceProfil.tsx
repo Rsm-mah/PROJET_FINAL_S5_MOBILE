@@ -11,15 +11,12 @@ import Navigation from '../../components/Navigation/Navigation';
 import Sary2 from '../../assets/img/Audi Q3 2020.jpeg';
   
   const DetailAnnonceProfil = () => {
-    const [isButtonClicked, setIsButtonClicked] = useState(false);
+    const [etatBouton, setEtatBouton] = useState('DISPONIBLE');
 
     const handleClick = () => {
-        setIsButtonClicked(true);
-
-        setTimeout(() => {
-            setIsButtonClicked(false);
-        }, 300);
+        setEtatBouton((etatActuel) => (etatActuel === 'DISPONIBLE' ? 'VENDU' : 'DISPONIBLE'));
     };
+    
     
     return (
       <IonPage>
@@ -124,9 +121,11 @@ import Sary2 from '../../assets/img/Audi Q3 2020.jpeg';
                 </div>
 
                 <div className="button">
-                    <Link to="/modification">
-                        <button className="button-valider">MODIFIER</button>
-                    </Link>
+                    {/* <Link to=""> */}
+                        <button className={`button-valider ${etatBouton === 'VENDU' ? 'vendu' : ''}`} onClick={handleClick}>
+                            {etatBouton}
+                        </button>
+                    {/* </Link> */}
                 </div>
             </section>
           </IonContent>

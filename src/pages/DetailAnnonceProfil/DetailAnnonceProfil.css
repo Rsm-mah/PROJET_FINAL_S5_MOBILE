@@ -79,10 +79,16 @@ ion-content .ion-content-body-annonce-profil {
 .button {
     text-align: center;
     margin-bottom: 15px;
-    button {
+    .button-valider {
         background-color: #2f3032;
         color: #fff;
         width: 10cm;
         height: 2rem;
+    }
+
+    .vendu {
+        background-color: #fff;
+        border: 1px groove grey;
+        color: grey;
     }
 }
