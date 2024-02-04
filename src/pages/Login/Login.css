@@ -1,28 +1,23 @@
 ion-content .ion-content-body-login {
     height: 100vh;
     overflow: auto;
-    background-color: #2f3032;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     text-align: center;
 }
 
-.body_login .logo {
-    margin-top: 4cm;
-    margin-bottom: 4cm;
-}
-
-.body_login .logo h1{
-    color: #e5e1de;
+.body_login .logo img{
+    width: 35vh;
 }
 
 .body_login .body_log .input-group .input-email input,
 .body_login .body_log .input-group .input-password input {
     margin-bottom: 1.5cm;
-    color: #e5e1de;
+    color: #2f3032;
     background-color: transparent;
     border: none;
-    border-bottom: groove 1px #e5e1de;
+    border-bottom: groove 1px #2f3032;
     width: 8.5cm;
     outline: none;
     font-size: 16px;
@@ -33,7 +28,7 @@ ion-content .ion-content-body-login {
 
 .body_login .body_log .input-group .input-email input::placeholder,
 .body_login .body_log .input-group .input-password input::placeholder {
-    color: #e5e1de;
+    color: #2f3032;
 }
 
 .body_login .body_log .input-group .input-password ion-icon {
@@ -41,7 +36,7 @@ ion-content .ion-content-body-login {
     position: absolute;
     margin-top: 5px;
     right: 1.3cm;
-    color: #e5e1de;
+    color: #2f3032;
 }
 
 .body_login .body_log .button button {
@@ -49,8 +44,8 @@ ion-content .ion-content-body-login {
     width: 100%;
     height: 2rem;
     margin-top: 5px;
-    background-color: #e5e1de;
-    color: #2f3032;
+    background-color: #2f3032;
+    color: #fff;
     border-radius: 4px;
     font-weight: bold;
     margin-bottom: 1.5cm;
@@ -59,7 +54,7 @@ ion-content .ion-content-body-login {
 }
 
 .body_login .body_log .button button:hover {
-    box-shadow: 0 1px 2px #e5e1de;
+    box-shadow: 0 1px 2px #2f3032;
     transform: translateY(-2px);
 }
 
@@ -69,7 +64,7 @@ ion-content .ion-content-body-login {
 
 .body_login .body_log .inscription-link button {
     font-size: 16px;
-    color: #e5e1de;
+    color: #2f3032;
     background-color: #2f3032;
     background-color: transparent;
     letter-spacing: 1px;
@@ -81,7 +76,7 @@ ion-content .ion-content-body-login {
         position: absolute;
         margin-top: 5px;
         right: 0.6cm;
-        color: #e5e1de;
+        color: #2f3032;
     }    
 }
 
@@ -91,7 +86,7 @@ ion-content .ion-content-body-login {
         position: absolute;
         margin-top: 5px;
         right: 0.8cm;
-        color: #e5e1de;
+        color: #2f3032;
     }    
 }
 
@@ -101,7 +96,7 @@ ion-content .ion-content-body-login {
         position: absolute;
         margin-top: 5px;
         right: 1.3cm;
-        color: #e5e1de;
+        color: #2f3032;
     }    
 }
 
@@ -111,7 +106,7 @@ ion-content .ion-content-body-login {
         position: absolute;
         margin-top: 5px;
         right: 1.3cm;
-        color: #e5e1de;
+        color: #2f3032;
     }    
 }
 
@@ -121,6 +116,6 @@ ion-content .ion-content-body-login {
         position: absolute;
         margin-top: 5px;
         right: 1.5cm;
-        color: #e5e1de;
+        color: #2f3032;
     }    
 }

@@ -13,7 +13,6 @@ import Tab3 from './pages/Tab3';
 import Index from './pages/Index/Index';
 import Login from './pages/Login/Login';
 import Inscription from './pages/Inscription/Inscription';
-import Inscription_suite from './pages/Inscription/Inscription_suite';
 import Details from './pages/Details/Details';
 import ModifAnnonce from './pages/Modification/ModifAnnonce';
 import ModifAnnonceSuite from './pages/Modification/ModifAnnonceSuite';
@@ -69,9 +68,6 @@ const App: React.FC = () => (
           </Route>
           <Route exact path="/inscription">
             <Inscription />
-          </Route>
-          <Route exact path="/inscription_next">
-            <Inscription_suite />
           </Route>
           <Route exact path="/annonce">
             <Annonce />
