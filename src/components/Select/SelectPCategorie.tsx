@@ -7,7 +7,7 @@ import { caretDown } from 'ionicons/icons';
 
 interface SelectPProps {
     title: string;
-    options: { id: number, nom: string }[]; 
+    options: { id_categorie: number, nom_categorie: string }[]; 
     selectedValue: string;
     onValueChange: (value: string) => void;
     setDataForm:any;
@@ -15,7 +15,7 @@ interface SelectPProps {
     name:string
 }
 
-export function SelectP({ title , options, selectedValue, onValueChange,setDataForm,dataForm,name} : SelectPProps) {
+export function SelectPCategorie({ title , options, selectedValue, onValueChange,setDataForm,dataForm,name} : SelectPProps) {
     let [open,setOpen] = useState('open');
 
     // useEffect(() => {
@@ -37,13 +37,12 @@ export function SelectP({ title , options, selectedValue, onValueChange,setDataF
             <div className={`box_option_select ${open}`}>
                 {options.map((option, index) => (
                 <div key={index} className='option_item' onClick={() => {
-                    onValueChange(option.nom);
+                    onValueChange(option.nom_categorie);
                     setOpen('open');
                     console.log(open);
-                    setDataForm({...dataForm,  [name]: option.id})
-                    // console.log(dataForm);
+                    setDataForm({...dataForm,  [name]: option.id_categorie})
                 }}>
-                    {option.nom}
+                    {option.nom_categorie}
                 </div>
                 ))}
             </div>
