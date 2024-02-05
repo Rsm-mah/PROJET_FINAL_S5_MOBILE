@@ -103,6 +103,7 @@ ion-content .ion-content-body-inscription-suite {
     button {
         letter-spacing: 1px;
         font-size: 16px;
+        border: none;
         color: #2f3032;
         background-color: transparent;
     }
@@ -114,6 +115,7 @@ ion-content .ion-content-body-inscription-suite {
     button {
         letter-spacing: 1px;
         font-size: 16px;
+        border: none;
         color: #2f3032;
         background-color: transparent;
     }

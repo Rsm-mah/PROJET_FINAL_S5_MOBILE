@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState, useEffect } from 'react';
+import axios from 'axios';
 import { IonContent, IonPage, IonIcon } from '@ionic/react';
-import { Link } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 import './Inscription.css';
 import Sary from '../../assets/img/logo.png';
 import { eye,eyeOff } from 'ionicons/icons';
@@ -8,14 +9,12 @@ import { eye,eyeOff } from 'ionicons/icons';
 const Inscription = () => {
     const [formPage,setFormPage] = useState(0);
     const [passwordVisible, setPasswordVisible] = useState(false);
+    const [error, setError] = useState(null);
+    const history = useHistory();
 
     const [formData, setFormData] = useState({
         nom: '',
         prenom: '',
-        genre: '',
-        date_naissance: '',
-        adresse: '',
-        contact: '',
         email: '',
         password: '',
       });
@@ -24,86 +23,94 @@ const Inscription = () => {
         setPasswordVisible((prev) => !prev);
     };
 
+    useEffect(() => {
+        console.log(formData);
+    }, [formData]);
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData({
           ...formData,
           [name]: value,
         });
-      };
+    };
 
-    function Form1(fonction:any) {
+    const handleSubmit = async (e:FormEvent) => {
+        e.preventDefault();
+        setError(null);
+        const apiUrl = 'https://voiture-production-247e.up.railway.app/api/log/signup';
+
+        try {
+        const data = new FormData();
+        data.append('nom', formData.nom);
+        data.append('prenom', formData.prenom);
+        data.append('email', formData.email);
+        data.append('password', formData.password);
+        let config = {
+            method: 'post',
+            maxBodyLength: Infinity,
+            url: apiUrl,
+            headers: {
+            'Content-Type': 'multipart/form-data',
+            },
+            data: data
+        };
+        const response = await axios.request(config);
+
+        if (response.data.error) {
+            // Si il y a une erreur dans la reponse
+            console.error('Erreur lors de la requête:', response.data.error);
+            setError(response.data.error);
+        } else {
+            console.log('Inscription successful:', response.data);
+            history.push("/login")
+            setFormData({
+                nom: '',
+                prenom: '',
+                email: '',
+                password: '',
+            });
+
+        }
+        } catch (error) {
+            console.error('Erreur lors de l\'envoi des données à railway:', error);
+            if (axios.isAxiosError(error) && error.response && error.response.data) {
+                setError(error.response.data);
+            } 
+        }
+    }
+
+    function Form1() {
         return <>
             <div className="formulaire">
-                <form action="" method="post">
+                <form onSubmit={handleSubmit}>
                     <div className="input-group">
                             <div className="input-name">
-                                <input type="text" placeholder="NOM" name='nom' onChange={handleChange}/>
+                                <input type="text" placeholder="NOM" name='nom' defaultValue={formData.nom} onChange={handleChange}/>
                             </div>
                 
                             <div className="input-first-name">
-                                <input type="text" placeholder="PRENOM" name='prenom' onChange={handleChange}/>
+                                <input type="text" placeholder="PRENOM" name='prenom' defaultValue={formData.prenom} onChange={handleChange}/>
                             </div>
 
-                            <div className="input-genre">
-                                <select name="genre" >
-                                    <option value="" selected>GENRE</option>
-                                    <option value="" >HOMME</option>
-                                    <option value="" >FEMME</option>
-                                </select>
+                            <div className="input-email">
+                                <input type="email" placeholder="EMAIL" name='email' defaultValue={formData.email} onChange={handleChange} />
                             </div>
 
-                            <div className="input-birthday">
-                                <input type="date" name='date_naissance' onChange={handleChange}/>
+                            <div className="input-password">
+                                <input
+                                    type={passwordVisible ? 'text' : 'password'}
+                                    placeholder="MOT DE PASSE"
+                                    name='password'
+                                    defaultValue={formData.password}
+                                    onChange={handleChange}
+                                />
+                                <IonIcon
+                                    icon={passwordVisible ? eye : eyeOff}
+                                    slot="end"
+                                    onClick={togglePasswordVisibility}
+                                />
                             </div>
-
-                            <div className="input-adress">
-                                <input type="text" placeholder="ADRESSE" name='adresse' onChange={handleChange}/>
-                            </div>
-
-                            <div className="input-contact">
-                                <input type="text" placeholder="CONTACT" name='contact' onChange={handleChange}/>
-                            </div>
-                    </div>
-
-                    <div className="button">
-                        <button type="submit" onClick={ ()=>{
-                            fonction(1)
-                            }}>SUIVANT
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-            <div className="login-link">
-                <Link to="/login">
-                    <button>Se Connceter</button>
-                </Link>
-            </div>
-        </>
-    }
-
-    function Form2(fonction:any) {
-        return <>
-            <div className="formulaire">
-                <form action="" method="post">
-                    <div className="input-group">
-                        <div className="input-email">
-                            <input type="email" placeholder="EMAIL" name='email' onChange={handleChange} />
-                        </div>
-                        <div className="input-password">
-                            <input
-                                type={passwordVisible ? 'text' : 'password'}
-                                placeholder="MOT DE PASSE"
-                                name='password'
-                                onChange={handleChange}
-                            />
-                            <IonIcon
-                                icon={passwordVisible ? eye : eyeOff}
-                                slot="end"
-                                onClick={togglePasswordVisibility}
-                            />
-                        </div>
                     </div>
 
                     <div className="button">
@@ -112,11 +119,10 @@ const Inscription = () => {
                 </form>
             </div>
 
-            <div className="back-link">
-                <button type="submit" onClick={ ()=>{
-                    fonction(0)
-                    }}>Retour
-                </button>
+            <div className="login-link">
+                <Link to="/login">
+                    <button>Se Connceter</button>
+                </Link>
             </div>
         </>
     }
@@ -132,8 +138,7 @@ const Inscription = () => {
                     </div>
 
                     <div className="body_insc">
-                        {formPage == 0 && Form1(setFormPage)}
-                        {formPage == 1 && Form2(setFormPage)}
+                        {Form1()}
                     </div>
                 </div>
             </section>
