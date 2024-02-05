@@ -4,17 +4,14 @@ import {
     IonIcon,
     IonSegment,
     IonSegmentButton,
-    IonAvatar,
     IonContent
 } from '@ionic/react';
 import './Profil.css';
 import { createOutline,listOutline,checkmarkCircleOutline,heartOutline } from 'ionicons/icons';
 import { Link } from 'react-router-dom';
 import Navigation from '../../components/Navigation/Navigation';
-import Sary from '../../assets/img/test3.jfif';
 import ListAnnonceProfil from './ListAnnonceProfil';
 import ListAnnonceFavoris from './ListAnnonceFavoris';
-import ListAnnonceVendu from './ListAnnonceVendu';
 import ProfilStats from './ProfilStats';
   
   const Profil = () => {
@@ -33,21 +30,14 @@ import ProfilStats from './ProfilStats';
                     <div className="title">
                         <h2>Profil</h2>
                     </div>
-                    <div className='icon-create' >
-                        <Link to="/modifprofil">
-                            <IonIcon aria-hidden="true" icon={createOutline} />
-                        </Link>
-                    </div>
                 </div>
 
                 <div className="profil">
-                    <div className="profil-picture">
-                        <IonAvatar>
-                            <img alt="Silhouette of a person's head" src={Sary} />
-                        </IonAvatar>
-                    </div>
                     <div className='profil-name'>
                         <h2>RASAMISOA Mahefa</h2>
+                        <Link to="/modifprofil">
+                            Modifier le profil
+                        </Link>
                     </div>
                 </div>
                 
@@ -58,9 +48,6 @@ import ProfilStats from './ProfilStats';
                         <IonSegmentButton value="dark">
                             <IonIcon icon={listOutline}></IonIcon>
                         </IonSegmentButton>
-                        <IonSegmentButton value="checkmarkCircle">
-                            <IonIcon icon={checkmarkCircleOutline}></IonIcon>
-                        </IonSegmentButton>
                         <IonSegmentButton value="heart">
                             <IonIcon icon={heartOutline}></IonIcon>
                         </IonSegmentButton>
@@ -68,7 +55,6 @@ import ProfilStats from './ProfilStats';
                 </div>
 
                 {selectedSegment === 'dark' && <ListAnnonceProfil />}
-                {selectedSegment === 'checkmarkCircle' && <ListAnnonceVendu />}
                 {selectedSegment === 'heart' && <ListAnnonceFavoris />}
 
                 <Navigation/>

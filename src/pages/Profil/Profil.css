@@ -15,7 +15,6 @@ ion-content .ion-content-body-profil {
 
     .title {
         width: 100%;
-        margin-left: 1.8cm;
     }
 
     .icon-create {
@@ -30,15 +29,15 @@ ion-content .ion-content-body-profil {
 }
 
 .ion-content-body-profil .profil {
-    margin-top: 2cm;
+    margin-top: 3cm;
 
-    .profil-picture {
-        display: flex;
-        justify-content: center;
-
-        ion-avatar {
-            width: 95px;
-            height: 95px;
+    .profil-name {
+        a {
+            text-decoration: none;
+            color: #2f3032;
+            border: 1px groove;
+            padding: 10px;
+            border-radius: 20px;
         }
     }
 }
