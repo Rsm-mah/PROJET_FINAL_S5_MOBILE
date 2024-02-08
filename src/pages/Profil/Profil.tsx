@@ -38,9 +38,6 @@ import ProfilStats from './ProfilStats';
                 <div className="profil">
                     <div className='profil-name'>
                         <h2>RASAMISOA Mahefa</h2>
-                        {/* <Link to="/modifprofil">
-                            Modifier le profil
-                        </Link> */}
                     </div>
                 </div>
                 

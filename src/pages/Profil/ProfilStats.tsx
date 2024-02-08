@@ -9,11 +9,6 @@ import './Profil.css';
             </div>
             <hr />
             <div className="stats-annonce">
-                <h2>3</h2>
-                <p>Vendus</p>
-            </div>
-            <hr />
-            <div className="stats-annonce">
                 <h2>0</h2>
                 <p>Favoris</p>
             </div>
