@@ -4,12 +4,14 @@ import { Link,useParams } from 'react-router-dom';
 import './DetailsAnnonce.css';
 import Sary from '../../assets/img/Audi Q3 2020.jpeg';
 import { getListAnnonce } from '../../axios_utils'
+import { ClipLoader } from 'react-spinners';
   
   const DetailsAnnonce = () => {
     const modal = useRef<HTMLIonModalElement>(null);
     const [isButtonClicked, setIsButtonClicked] = useState(false);
     const [data, setData] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(true);
+    const [loading,setLoading] = useState(true);
 
     const {id_voiture} = useParams<any>();
 
@@ -34,6 +36,7 @@ import { getListAnnonce } from '../../axios_utils'
             .then(response => {
                 if (response) {
                     setData(response.data);
+                    setLoading(false);
                     console.log(response.data);
                 } else {
                     console.log('Response is undefined');
@@ -49,7 +52,11 @@ import { getListAnnonce } from '../../axios_utils'
 
     return (
         <>
-            {
+            {loading ? (
+                <div className="spinner-container">
+                    <ClipLoader loading={loading} />
+                </div>
+            ) : (
                 <div className='details'>
                     <div className='voiture-photo'>
                         <img src={Sary} alt="" />
@@ -106,7 +113,7 @@ import { getListAnnonce } from '../../axios_utils'
                         </div>
                     </IonModal>
                 </div>
-            }
+            )}
         </>
     );
   };

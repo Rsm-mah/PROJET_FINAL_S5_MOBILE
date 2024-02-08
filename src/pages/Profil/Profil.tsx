@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import {
     IonPage,
     IonIcon,
@@ -8,7 +7,7 @@ import {
     IonContent
 } from '@ionic/react';
 import './Profil.css';
-import { createOutline,listOutline,checkmarkCircleOutline,heartOutline } from 'ionicons/icons';
+import { listOutline,heartOutline } from 'ionicons/icons';
 import { Link } from 'react-router-dom';
 import Navigation from '../../components/Navigation/Navigation';
 import ListAnnonceProfil from './ListAnnonceProfil';

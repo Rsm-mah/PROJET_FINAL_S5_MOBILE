@@ -75,6 +75,13 @@ ion-content .ion-content-body-profil {
     }
 }
 
+.ion-content-body-profil .spinner-container {
+    display: flex;
+    justify-content: center;
+    height: 59vh;
+    align-items: center;
+}
+
 .ion-content-body-profil .listAnnonce {
     margin-top: 1px;
     margin-bottom: 65px;

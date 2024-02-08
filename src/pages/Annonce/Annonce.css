@@ -35,6 +35,13 @@ ion-content .ion-content-body-annonce {
     overflow: scroll;
     margin-top: 3cm;
     margin-bottom: 65px;
+
+    .spinner-container {
+        display: flex;
+        justify-content: center;
+        height: 80vh;
+        align-items: center;
+    }
 }
 
 .ion-content-body-annonce .listAnnonce .annonce ion-card {

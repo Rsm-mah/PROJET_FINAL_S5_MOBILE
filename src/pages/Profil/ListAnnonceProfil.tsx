@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './Profil.css';
 import { Link } from 'react-router-dom';
 import { getListAnnonceProfil } from '../../axios_utils'
+import { ClipLoader } from 'react-spinners';
   
   const ListAnnonceProfil = () => {
     const [data, setData] = useState([]);
+    const [loading,setLoading] = useState(true);
 
     useEffect(() => {
         setTimeout(() => {
@@ -12,6 +14,7 @@ import { getListAnnonceProfil } from '../../axios_utils'
             .then(response => {
                 if (response) {
                     setData(response.data);
+                    setLoading(false);
                     console.log(response.data);
                 } else {
                     console.log('Response is undefined');
@@ -25,7 +28,11 @@ import { getListAnnonceProfil } from '../../axios_utils'
 
     return (
         <>
-            {
+            {loading ? (
+                <div className="spinner-container">
+                    <ClipLoader loading={loading} />
+                </div>
+            ) : (
             <div className="listAnnonce">
                 {data.map((data, index) => (
                     <div className="annonce" key={index}>
@@ -35,33 +42,8 @@ import { getListAnnonceProfil } from '../../axios_utils'
                         </Link>
                     </div>
                 ))}
-                {/* <div className="annonce">
-                    <Link to="/detailannonceprofil">
-                        <img src={Sary} alt="" />
-                    </Link>
-                </div>
-                <div className="annonce">
-                    <Link to="/detailannonceprofil">
-                        <img src={Sary} alt="" />
-                    </Link>
-                </div>
-                <div className="annonce">
-                    <Link to="/detailannonceprofil">
-                        <img src={Sary} alt="" />
-                    </Link>
-                </div>
-                <div className="annonce">
-                    <Link to="/detailannonceprofil">
-                        <img src={Sary} alt="" />
-                    </Link>
-                </div>
-                <div className="annonce">
-                    <Link to="/detailannonceprofil">
-                        <img src={Sary} alt="" />
-                    </Link>
-                </div> */}
             </div>
-            }
+            )}
         </>
     );
   };
