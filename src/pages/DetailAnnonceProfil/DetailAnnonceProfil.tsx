@@ -61,6 +61,14 @@ import { getListAnnonceProfil } from '../../axios_utils'
                       </div>
       
                       <div className="details">
+                            <div className="voiture-name">
+                                {element && (
+                                <>
+                                    <h1>{element.marque} {element.model}</h1>
+                                </>
+                                )}
+                            </div>
+
                             <div className="voiture-price">
                                 {element && (
                                 <>
@@ -134,6 +142,11 @@ import { getListAnnonceProfil } from '../../axios_utils'
                                         <div className="propriete">
                                             <h4>Matricule :</h4>
                                             <p>{element.matricule}</p>
+                                        </div>
+
+                                        <div className="propriete">
+                                            <h4>Etat :</h4>
+                                            <p>{element.etat}</p>
                                         </div>
             
                                         <div className="propriete">
