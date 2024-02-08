@@ -57,6 +57,9 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
         idOrigine:'',
         places :'',
         modele :'',
+        reservoir :'',
+        consommation :'',
+        etat :'',
         matricule:'',
         kilometrage:'',
         description:'',
@@ -88,6 +91,20 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
         setDataForm({ ...dataForm, modele: newValue });
     };
 
+    const handleReservoir = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newValue = event.target.value;
+        console.log("reservoir", newValue);
+        setMatricule(newValue);
+        setDataForm({ ...dataForm, reservoir: newValue });
+    };
+
+    const handleConsommation = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newValue = event.target.value;
+        console.log("consommation", newValue);
+        setMatricule(newValue);
+        setDataForm({ ...dataForm, consommation: newValue });
+    };
+
     const handleMatricule = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
         console.log("matricule", newValue);
@@ -100,6 +117,13 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
         console.log("kilometrage", newValue);
         setKilometrage(newValue);
         setDataForm({ ...dataForm, kilometrage: newValue });
+    };
+
+    const handleEtat = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newValue = event.target.value;
+        console.log("etat", newValue);
+        setMatricule(newValue);
+        setDataForm({ ...dataForm, etat: newValue });
     };
 
     const handleDescription = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -115,11 +139,6 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
         setPrix(newValue);
         setDataForm({ ...dataForm, prix: newValue });
     };
-
-    const handleSubmit = (e: FormEvent) => {
-        e.preventDefault();
-        console.log(dataForm);
-    };
     
     const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
         const fileInput = event.target;
@@ -129,6 +148,11 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
         } else {
             setSelectedFile('');
         }
+    };
+
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault();
+        console.log(dataForm);
     };
 
     const updateDataForm = (name: string, value: any) => {
@@ -278,8 +302,12 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
         return <>
             <form action="" method="post">
                 <div className="input-group">
-                    <div className="select-transmission">
-                        
+                    <div className="input-reservoir">
+                        <input type="number" placeholder="RESERVOIR" onChange={handleReservoir}/>
+                    </div>
+
+                    <div className="input-consommation">
+                        <input type="number" placeholder="CONSOMMATION" onChange={handleConsommation}/>
                     </div>
 
                     <div className="input-matricule">
@@ -288,6 +316,10 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
 
                     <div className="input-kilometrage">
                         <input type="text" placeholder="KILOMETRAGE" onChange={handleKilometrage}/>
+                    </div>
+
+                    <div className="input-etat">
+                        <input type="number" placeholder="ETAT" onChange={handleEtat}/>
                     </div>
                 </div>
 

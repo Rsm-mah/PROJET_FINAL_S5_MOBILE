@@ -49,6 +49,7 @@ import { ClipLoader } from 'react-spinners';
                 .then(response => {
                     if (response) {
                         setData(response.data);
+                        setLoading(false);
                         console.log(response.data);
                         history.push(`/details/${element.id_voiture}`);
                     } else {
@@ -88,22 +89,24 @@ import { ClipLoader } from 'react-spinners';
                         </div>
         
                         <div className="details">
-                                <div className="voiture-name">
-                                    {element && (
-                                    <>
-                                        <h1>{element.marque} {element.model}</h1>
-                                    </>
-                                    )}
-                                </div>
+                                <div className="voiture">
+                                    <div className="voiture-name">
+                                        {element && (
+                                        <>
+                                            <h1>{element.marque} {element.model}</h1>
+                                        </>
+                                        )}
+                                    </div>
 
-                                <div className="voiture-price">
-                                    {element && (
-                                    <>
-                                        <h2>
-                                            {element.prix}
-                                        </h2>
-                                    </>
-                                    )}
+                                    <div className="voiture-price">
+                                        {element && (
+                                        <>
+                                            <h2>
+                                                {element.prix}
+                                            </h2>
+                                        </>
+                                        )}
+                                    </div>
                                 </div>
             
                                 <div className="voiture-description">
@@ -133,6 +136,11 @@ import { ClipLoader } from 'react-spinners';
                                             <div className="propriete">
                                                 <h4>Modèle :</h4>
                                                 <p>{element.model}</p>
+                                            </div>
+
+                                            <div className="propriete">
+                                                <h4>Réservoir :</h4>
+                                                <p>{element.reservoir}</p>
                                             </div>
                 
                                             <div className="propriete">
@@ -169,6 +177,11 @@ import { ClipLoader } from 'react-spinners';
                                             <div className="propriete">
                                                 <h4>Matricule :</h4>
                                                 <p>{element.matricule}</p>
+                                            </div>
+
+                                            <div className="propriete">
+                                                <h4>Consommation :</h4>
+                                                <p>{element.consommation}</p>
                                             </div>
 
                                             <div className="propriete">

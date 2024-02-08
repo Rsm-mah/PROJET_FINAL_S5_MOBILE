@@ -88,6 +88,7 @@ import { ClipLoader } from 'react-spinners';
                                                 <p>Marque: <span>{element.marque}</span></p>
                                                 <p>Transmission: <span>{element.transmission}</span></p>
                                                 <p>Origine: <span>{element.pays}</span></p>
+                                                <p>Réservoir: <span>{element.reservoir}</span></p>
                                                 <p>Kilometrage: <span>{element.kilometrage}</span></p>
                                                 <p>Energie: <span>{element.energie}</span></p>
                                             </div>
@@ -96,6 +97,7 @@ import { ClipLoader } from 'react-spinners';
                                                 <p>Annee: <span>{element.annee}</span></p>
                                                 <p>Etat: <span>{element.etat}</span></p>
                                                 <p>Places: <span>{element.place}</span></p>
+                                                <p>Consommation: <span>{element.consommation}</span></p>
                                                 <p>Matricule: <span>{element.matricule}</span></p>
                                                 <p>Couleur: <span>{element.couleur}</span></p>
                                             </div>
