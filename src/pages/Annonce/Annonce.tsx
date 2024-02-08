@@ -36,14 +36,6 @@ import Navigation from '../../components/Navigation/Navigation';
 
                 <div className='listAnnonce'>
                     <ListAnnonce/>
-                    <ListAnnonce/>
-                    <ListAnnonce/>
-                    <ListAnnonce/>
-                    <ListAnnonce/>
-                    <ListAnnonce/>
-                    <ListAnnonce/>
-                    <ListAnnonce/>
-                    <ListAnnonce/>
                 </div>
 
                 <Navigation/>

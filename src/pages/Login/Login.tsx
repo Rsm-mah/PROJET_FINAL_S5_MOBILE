@@ -104,7 +104,11 @@ const Login = () => {
                                     </div>
                                 </div>
 
-                                {error && <p style={{ color: 'red' }}>{error}</p>}
+                                <div className='error'>
+                                    <div className="error-message">
+                                        {error && <p style={{ color: 'red' }}>{error}</p>}
+                                    </div>
+                                </div>
 
                                 <div className="button">
                                     <button type="submit">SE CONNECTER</button>

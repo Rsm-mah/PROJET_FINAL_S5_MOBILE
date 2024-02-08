@@ -3,6 +3,8 @@ import axios from 'axios';
 import {
     IonPage,
     IonIcon,
+    IonSelect,
+    IonSelectOption,
     IonContent
 } from '@ionic/react';
 import { Link } from 'react-router-dom';
@@ -12,6 +14,11 @@ import { SelectP } from '../../components/Select/SelectP';
 import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
 
   const AjoutAnnonce = () => {
+    interface Transmission {
+        id: number;
+        nom: string;
+    }
+
     const [selectedFile, setSelectedFile] = useState<string>('');
 
     const [selectedCategorie, setSelectedCategorie] = useState('');
@@ -37,6 +44,9 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
     const [description,setDescription] = useState<string>('');
     const [prix,setPrix] = useState<string>('');
 
+    const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+
+
     const [dataForm,setDataForm] = useState({
         idCat:'',
         idMarque:'',
@@ -52,6 +62,9 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
         description:'',
         prix:''
     });
+
+
+    
 
     const handleMonth = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
@@ -265,6 +278,10 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
         return <>
             <form action="" method="post">
                 <div className="input-group">
+                    <div className="select-transmission">
+                        
+                    </div>
+
                     <div className="input-matricule">
                         <input type="text" placeholder="MATRICULE" onChange={handleMatricule}/>
                     </div>

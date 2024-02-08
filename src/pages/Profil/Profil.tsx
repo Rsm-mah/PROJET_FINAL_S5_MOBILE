@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
     IonPage,
     IonIcon,
@@ -17,10 +18,12 @@ import ProfilStats from './ProfilStats';
   const Profil = () => {
     const [selectedSegment, setSelectedSegment] = useState<string>('dark');
 
+
     const handleSegmentChange = (e: CustomEvent) => {
         const newSegment = e.detail.value as string;
         setSelectedSegment(newSegment || 'dark');
     };
+    
     
     return (
       <IonPage>
@@ -35,9 +38,9 @@ import ProfilStats from './ProfilStats';
                 <div className="profil">
                     <div className='profil-name'>
                         <h2>RASAMISOA Mahefa</h2>
-                        <Link to="/modifprofil">
+                        {/* <Link to="/modifprofil">
                             Modifier le profil
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
                 

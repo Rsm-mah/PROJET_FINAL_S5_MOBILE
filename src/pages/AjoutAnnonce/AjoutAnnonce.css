@@ -78,6 +78,12 @@ ion-content .ion-content-body-ajout {
         padding-bottom: 5px;
         text-align: left;
     }
+
+    ion-select {
+        ion-select-option {
+            text-align: left;
+        }
+    }
 }
 
 .ion-content-body-ajout .body_ajout .input-group .input-file {

@@ -39,6 +39,15 @@ ion-content .ion-content-body-login {
     color: #2f3032;
 }
 
+.body_login .body_log .error {
+    display: flex;
+    justify-content: center;
+
+    .error-message {
+        width: 80%;
+    }
+}
+
 .body_login .body_log .button button {
     letter-spacing: 1px;
     width: 100%;
@@ -65,6 +74,7 @@ ion-content .ion-content-body-login {
 .body_login .body_log .inscription-link button {
     font-size: 16px;
     color: #2f3032;
+    border: none;
     background-color: #2f3032;
     background-color: transparent;
     letter-spacing: 1px;

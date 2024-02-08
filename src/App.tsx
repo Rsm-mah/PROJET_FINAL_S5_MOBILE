@@ -72,7 +72,7 @@ const App: React.FC = () => (
           <Route exact path="/annonce">
             <Annonce />
           </Route>
-          <Route exact path="/details">
+          <Route exact path="/details/:id_voiture">
             <Details />
           </Route>
           <Route exact path="/modification">
@@ -93,7 +93,7 @@ const App: React.FC = () => (
           <Route exact path="/ajoutannonce">
             <AjoutAnnonce />
           </Route>
-          <Route exact path="/detailannonceprofil">
+          <Route exact path="/detailannonceprofil/:id_voiture">
             <DetailAnnonceProfil />
           </Route>
           <Route exact path="/">
