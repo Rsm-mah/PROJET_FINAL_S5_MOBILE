@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FormEvent } from 'react';
+import axios from 'axios';
 import {
     IonPage,
     IonIcon,
-    IonContent
+    IonContent,
+    IonPopover
 } from '@ionic/react';
 import './DetailAnnonceProfil.css';
 import { arrowBack } from 'ionicons/icons';
 import { Link,useParams,useHistory } from 'react-router-dom';
-import Sary2 from '../../assets/img/Audi Q3 2020.jpeg';
+import { SelectP } from '../../components/Select/SelectP';
 import { getListAnnonceProfil,putStatusAnnonceProfil } from '../../axios_utils'
 import { ClipLoader } from 'react-spinners';
   
@@ -16,11 +18,59 @@ import { ClipLoader } from 'react-spinners';
     const history = useHistory();
     const [etatBouton, setEtatBouton] = useState('DISPONIBLE');
     const [loading,setLoading] = useState(true);
+    const [showPopover, setShowPopover] = useState(false);
+    const [error, setError] = useState(null);
 
     const {id_voiture} = useParams<any>();
     // console.log(id_voiture);
 
+    const [selectedUser, setSelectedUser] = useState('');
+    const [users, setUsers] = useState([]);
+    const [annonce,setAnnonce] = useState<string>('');
+    const [user,setUser] = useState<string>('');
+    const [prix,setPrix] = useState<string>('');
+
+    const [dataForm,setDataForm] = useState({
+        annonce: '',
+        user:'',
+        prix:''
+    });
+
+
+    const handleOpenPopover = () => {
+        setShowPopover(true);
+    };
+
+    const handleClosePopover = () => {
+        setShowPopover(false);
+    };
+
+    const handleUser = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newValue = event.target.value;
+        console.log("user", newValue);
+        setUser(newValue);
+        setDataForm({ ...dataForm, user: newValue });
+    };
+
+    const handlePrix = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newValue = event.target.value;
+        console.log("prix", newValue);
+        setPrix(newValue);
+        setDataForm({ ...dataForm, prix: newValue });
+    };
+
+    const fetchDataUser = async () => {
+        try {
+            const response = await axios.get('https://voiture-production-247e.up.railway.app/api/log/voir');
+            setUsers(response.data);
+        } catch (error) {
+            console.error('Error fetching data',error);
+        }
+    };
+
     useEffect(() => {
+        fetchDataUser();
+        console.log(dataForm);
         setTimeout(() => {
             const url = `https://voiture-production-247e.up.railway.app/api/annonce/listeannonce/${id_voiture}`
             getListAnnonceProfil(url)
@@ -37,32 +87,57 @@ import { ClipLoader } from 'react-spinners';
                 console.log('Error fetching data', error);
             })
         })
-    }, []);
+    }, [dataForm]);
 
     const element = data.length > 0 ? data[0] : null;
 
-    const handleClick = () => {
-        {element && (
-            setTimeout(() => {
-                const url = `https://voiture-production-247e.up.railway.app/api/annonce/status/${element.id_annonce}`
-                putStatusAnnonceProfil(url)
-                .then(response => {
-                    if (response) {
-                        setData(response.data);
-                        setLoading(false);
-                        console.log(response.data);
-                        history.push(`/details/${element.id_voiture}`);
-                    } else {
-                        console.log('Response is undefined');
-                    }
-                })
-                .catch(error => {
-                    console.log('Error fetching data', error);
-                })
-            })
-        )}
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+        setError(null);
 
-        setEtatBouton((etatActuel) => (etatActuel === 'DISPONIBLE' ? 'VENDU' : 'DISPONIBLE'));
+        if (element) {
+        
+            const apiUrl = `https://voiture-production-247e.up.railway.app/api/annonce/status/${element.id_annonce}`;
+            // console.log(apiUrl);
+
+            const token =localStorage.getItem('token');
+
+            try {
+            const data = new FormData();
+            data.append('id_acheteur', dataForm.user);
+            data.append('prix', dataForm.prix);
+
+            let config = {
+                method: 'post',
+                maxBodyLength: Infinity,
+                url: apiUrl,
+                headers: {
+                'authorization':token,
+                'Content-Type': 'multipart/form-data',
+                },
+                data: data
+            };
+            const response = await axios.request(config);
+
+            if (response.data.error) {
+                // Si il y a une erreur dans la reponse
+                console.error('Erreur lors de la requête:', response.data.error);
+                setError(response.data.error);
+            } else {
+                history.push(`/detailannonceprofil/${element.id_voiture}`)
+                setDataForm({
+                    annonce: '',
+                    user: '',
+                    prix: ''
+                });
+
+            }
+            } catch (error) {
+                console.error('Erreur lors de l\'envoi des données à railway:', error);
+            }
+        } else {
+            console.error('Element is null');
+        }
     };
     
     
@@ -197,6 +272,11 @@ import { ClipLoader } from 'react-spinners';
                                                 <h4>Places :</h4>
                                                 <p>{element.place}</p>
                                             </div>
+
+                                            <div className="propriete">
+                                                <h4>Status :</h4>
+                                                <p>{element.status === 20 ? "Disponible" : "Vendu"}</p>
+                                            </div>
                                         </>
                                         )}
                                 </div>
@@ -207,17 +287,42 @@ import { ClipLoader } from 'react-spinners';
                         </div>
         
                         <div className="button">
-                            {/* <Link to=""> */}
-                                {element && (
-                                    <>
-                                        <button className={`button-valider ${element.status === 30 ? 'vendu' : ''}`} onClick={handleClick} disabled={element.status === 30}>
-                                            {/* {console.log(element.status)} */}
-                                            {element.status === 30 ? 'VENDU' : etatBouton}
-                                        </button>
-                                    </>
-                                )}
-                            {/* </Link> */}
+                            <button className='button-valider' onClick={handleOpenPopover}>VENDRE</button>
                         </div>
+
+                        <IonPopover
+                            isOpen={showPopover}
+                            onDidDismiss={handleClosePopover}
+                        >
+                            <form onSubmit={handleSubmit}>
+                                <div className="input-group">
+                                    <div className="select-user">
+                                        <select name="id_acheteur" onChange={handleUser}>
+                                            <option value="">ACHETEUR</option>
+                                            {users.map(user => (
+                                                <option key={user.id} value={user.id}>
+                                                    {user.prenom}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+
+                                    <div className="input-prix">
+                                        <input type="number" placeholder="PRIX"  onChange={handlePrix} name='prix'/>
+                                    </div>
+
+                                    {element && (
+                                        <>
+                                            <input type="hidden" value={element.id_annonce} name='id_annonce'/>
+                                        </>
+                                    )}
+                                </div>
+
+                                <div className="valider">
+                                    <button className='link-valider' >Valider</button>
+                                </div>
+                            </form>
+                        </IonPopover>
                     </section>
                     </IonContent>
                 </IonPage>

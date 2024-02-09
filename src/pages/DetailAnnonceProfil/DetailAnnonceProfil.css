@@ -105,3 +105,44 @@ ion-content .ion-content-body-annonce-profil {
         color: grey;
     }
 }
+
+ion-popover {
+    .ion-delegate-host {
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .input-group .select-user,
+        .input-group .input-prix {
+            select,input {
+                letter-spacing: 1px;
+                color: #2f3032;
+                background-color: transparent;
+                border: none;
+                border-bottom: groove 1px #2f3032;
+                width: 5cm;
+                outline: none;
+                font-size: 16px;
+                padding-bottom: 5px;
+                margin-bottom: 20px;
+                text-align: left;
+            }
+        }
+
+        .valider {
+            button {
+                letter-spacing: 1px;
+                background-color: #2f3032;
+                color: #fff;
+                border-radius: 4px;
+                font-weight: bold;
+                font-size: 16px;
+                transition: 0.4s ease-in-out;
+            }
+        }
+    }
+
+
+}
