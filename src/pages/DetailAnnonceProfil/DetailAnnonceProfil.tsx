@@ -287,7 +287,7 @@ import { ClipLoader } from 'react-spinners';
                         </div>
         
                         <div className="button">
-                            <button className='button-valider' onClick={handleOpenPopover}>VENDRE</button>
+                            <button className='button-valider' onClick={handleOpenPopover} disabled={element && element.status === 30}>VENDRE</button>
                         </div>
 
                         <IonPopover
