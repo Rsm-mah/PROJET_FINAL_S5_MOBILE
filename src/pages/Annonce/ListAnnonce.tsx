@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,IonIcon } from '@ionic/react';
+import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent } from '@ionic/react';
 import { Link } from 'react-router-dom';
 import './Annonce.css';
 import Sary from '../../assets/img/Audi Q3 2020.jpeg';
@@ -44,7 +44,7 @@ import { ClipLoader } from 'react-spinners';
                                 <IonCardSubtitle>{data.prix} Ar</IonCardSubtitle>
 
                                 <IonCardContent>
-                                    Status : {data.status === 0 ? "Disponible" : "Vendu"}
+                                    Status : {data.status === 20 ? "Disponible" : "Vendu"}
                                     <Link to={`/details/${data.id_voiture}`}>
                                         Voir Détail
                                     </Link>

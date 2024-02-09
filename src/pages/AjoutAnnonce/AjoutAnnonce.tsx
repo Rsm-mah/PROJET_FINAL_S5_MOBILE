@@ -3,15 +3,14 @@ import axios from 'axios';
 import {
     IonPage,
     IonIcon,
-    IonSelect,
-    IonSelectOption,
     IonContent
 } from '@ionic/react';
-import { Link } from 'react-router-dom';
-import { arrowBack,imageOutline  } from 'ionicons/icons';
+import { Link,useHistory } from 'react-router-dom';
+import { imageOutline  } from 'ionicons/icons';
 import './AjoutAnnonce.css';
 import { SelectP } from '../../components/Select/SelectP';
 import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
   const AjoutAnnonce = () => {
     interface Transmission {
@@ -19,7 +18,11 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
         nom: string;
     }
 
+    const history = useHistory();
+    const [error, setError] = useState(null);
+
     const [selectedFile, setSelectedFile] = useState<string>('');
+    const [image, setImage] = useState<string>('');
 
     const [selectedCategorie, setSelectedCategorie] = useState('');
     const [selectedMarque, setSelectedMarque] = useState('');
@@ -44,24 +47,24 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
     const [description,setDescription] = useState<string>('');
     const [prix,setPrix] = useState<string>('');
 
-    const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+    const [base64, setBase64] = useState<string>(''); 
 
 
     const [dataForm,setDataForm] = useState({
-        idCat:'',
-        idMarque:'',
-        month:'',
-        idEnergie:'',
-        idTransmission:'',
-        idCouleur:'',
-        idOrigine:'',
+        categorie:'',
+        marque:'',
+        annne:'',
+        energie:'',
+        transmission:'',
+        couleur:'',
+        pays:'',
         places :'',
-        modele :'',
+        model :'',
         reservoir :'',
         consommation :'',
-        etat :'',
         matricule:'',
         kilometrage:'',
+        selectedFile:'',
         description:'',
         prix:''
     });
@@ -71,10 +74,10 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
 
     const handleMonth = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
-        console.log("month", newValue);
+        console.log("annee", newValue);
         setMonth(newValue);
         console.log(month);
-        setDataForm({ ...dataForm, month: newValue });
+        setDataForm({ ...dataForm, annne: newValue });
     };
 
     const handlePlace = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -88,7 +91,7 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
         const newValue = event.target.value;
         console.log("modele", newValue);
         setModele(newValue);
-        setDataForm({ ...dataForm, modele: newValue });
+        setDataForm({ ...dataForm, model: newValue });
     };
 
     const handleReservoir = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -119,13 +122,6 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
         setDataForm({ ...dataForm, kilometrage: newValue });
     };
 
-    const handleEtat = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const newValue = event.target.value;
-        console.log("etat", newValue);
-        setMatricule(newValue);
-        setDataForm({ ...dataForm, etat: newValue });
-    };
-
     const handleDescription = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
         console.log("description", newValue);
@@ -139,24 +135,113 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
         setPrix(newValue);
         setDataForm({ ...dataForm, prix: newValue });
     };
+
+
+    const getBase64 = async (url:any)  => {
+        return new Promise((resolve, reject) => {
+            fetch(url)
+            .then(response => response.blob())
+            .then(blob => {
+                let reader = new FileReader();
+                reader.onloadend = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(blob);
+            })
+            .catch(reject);
+        });
+    };
+
+    const takePicture = async () => {
+        const image = await Camera.getPhoto({
+            quality: 90,
+            allowEditing: true,
+            resultType: CameraResultType.Uri
+        });
     
-    const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const fileInput = event.target;
-        if (fileInput.files && fileInput.files.length > 0) {
-            const fileName = fileInput.files[0].name;
-            setSelectedFile(fileName);
-        } else {
-            setSelectedFile('');
+        const web = image.webPath as string;
+        setImage(web);
+    
+        if (web) {
+            getBase64(web)
+                .then((result) => {
+                    setBase64(result);
+                    console.log('base : ', result);
+                    setDataForm({ ...dataForm, selectedFile: result });
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
         }
     };
+    
 
-    const handleSubmit = (e: FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        console.log(dataForm);
-    };
+        setError(null);
+        const apiUrl = 'https://voiture-production-247e.up.railway.app/api/annonce/insert';
 
-    const updateDataForm = (name: string, value: any) => {
-        setDataForm(prevDataForm => ({ ...prevDataForm, [name]: value }));
+        const token =localStorage.getItem('token');
+
+        try {
+        const data = new FormData();
+        data.append('images', dataForm.selectedFile);
+        data.append('marque', dataForm.marque);
+        data.append('model', dataForm.model);
+        data.append('categorie', dataForm.categorie);
+        data.append('transmission', dataForm.transmission);
+        data.append('couleur', dataForm.couleur);
+        data.append('energie', dataForm.energie);
+        data.append('pays', dataForm.pays);
+        data.append('matricule', dataForm.matricule);
+        data.append('annee', dataForm.annne);
+        data.append('conso', dataForm.consommation);
+        data.append('reservoir', dataForm.reservoir);
+        data.append('nbr_place', dataForm.places);
+        data.append('kilometrage', dataForm.kilometrage);
+        data.append('prix', dataForm.prix);
+        data.append('description', dataForm.description);
+
+        let config = {
+            method: 'post',
+            maxBodyLength: Infinity,
+            url: apiUrl,
+            headers: {
+            'authorization':token,
+            'Content-Type': 'multipart/form-data',
+            },
+            data: data
+        };
+        const response = await axios.request(config);
+
+        if (response.data.error) {
+            // Si il y a une erreur dans la reponse
+            console.error('Erreur lors de la requête:', response.data.error);
+            setError(response.data.error);
+        } else {
+            history.push("/annonce")
+            setDataForm({
+                categorie:'',
+                marque:'',
+                annne:'',
+                energie:'',
+                transmission:'',
+                couleur:'',
+                pays:'',
+                places :'',
+                model :'',
+                reservoir :'',
+                consommation :'',
+                matricule:'',
+                kilometrage:'',
+                selectedFile:'',
+                description:'',
+                prix:''
+            });
+
+        }
+        } catch (error) {
+            console.error('Erreur lors de l\'envoi des données à railway:', error);
+        }
     };
 
     useEffect(() => {
@@ -230,23 +315,23 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
             <form action="" method="post">
                 <div className="input-group">
                     <div className="select-categorie">
-                        <SelectPCategorie  title="CATEGORIE" options={categorie} selectedValue={selectedCategorie} onValueChange={setSelectedCategorie} setDataForm={setDataForm} dataForm={dataForm} name={'idCat'}/>
+                        <SelectPCategorie  title="CATEGORIE" options={categorie} selectedValue={selectedCategorie} onValueChange={setSelectedCategorie} setDataForm={setDataForm} dataForm={dataForm} name={'categorie'}/>
                     </div>
 
                     <div className="select-marque">
-                        <SelectP title="MARQUE" options={marque} selectedValue={selectedMarque} onValueChange={setSelectedMarque} setDataForm={setDataForm} dataForm={dataForm} name={'idMarque'}/>
+                        <SelectP title="MARQUE" options={marque} selectedValue={selectedMarque} onValueChange={setSelectedMarque} setDataForm={setDataForm} dataForm={dataForm} name={'marque'}/>
                     </div>
 
                     <div className="input-month">
-                        <input type="date" placeholder='ANNEE'  onChange={handleMonth}/>
+                        <input type="text" placeholder='ANNEE'  onChange={handleMonth} name='annee'/>
                     </div>
 
                     <div className="select-energie">
-                        <SelectP title="ENERGIE" options={energie} selectedValue={selectedEnergie} onValueChange={setSelectedEnergie} setDataForm={setDataForm} dataForm={dataForm} name={'idEnergie'}/>
+                        <SelectP title="ENERGIE" options={energie} selectedValue={selectedEnergie} onValueChange={setSelectedEnergie} setDataForm={setDataForm} dataForm={dataForm} name={'energie'}/>
                     </div>
 
                     <div className="select-transmission">
-                        <SelectP title="TRANSMISSION" options={transmission} selectedValue={selectedTransmission} onValueChange={setSelectedTransmission} setDataForm={setDataForm} dataForm={dataForm} name={'idTransmission'}/>
+                        <SelectP title="TRANSMISSION" options={transmission} selectedValue={selectedTransmission} onValueChange={setSelectedTransmission} setDataForm={setDataForm} dataForm={dataForm} name={'transmission'}/>
                     </div>
 
                     
@@ -268,19 +353,19 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
             <form action="" method="post">
                 <div className="input-group">
                     <div className="input-modele">
-                        <input type="text" placeholder="MODELE" onChange={handleModele}/>
+                        <input type="text" placeholder="MODELE" onChange={handleModele} name='model'/>
                     </div>
                     
                     <div className="select-origine">
-                        <SelectP title="ORIGINE" options={origine} selectedValue={selectedOrigine} onValueChange={setSelectedOrigine} setDataForm={setDataForm} dataForm={dataForm} name={'idOrigine'}/>
+                        <SelectP title="ORIGINE" options={origine} selectedValue={selectedOrigine} onValueChange={setSelectedOrigine} setDataForm={setDataForm} dataForm={dataForm} name={'pays'}/>
                     </div>
 
                     <div className="select-couleur">
-                        <SelectP title="COULEUR" options={couleur} selectedValue={selectedCouleur} onValueChange={setSelectedCouleur} setDataForm={setDataForm} dataForm={dataForm} name={'idCouleur'}/>
+                        <SelectP title="COULEUR" options={couleur} selectedValue={selectedCouleur} onValueChange={setSelectedCouleur} setDataForm={setDataForm} dataForm={dataForm} name={'couleur'}/>
                     </div>
 
                     <div className="input-place">
-                        <input type="number" placeholder="PLACES"  onChange={handlePlace}/>
+                        <input type="number" placeholder="PLACES"  onChange={handlePlace} name='nbr_place'/>
                     </div>
                 </div>
 
@@ -303,24 +388,21 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
             <form action="" method="post">
                 <div className="input-group">
                     <div className="input-reservoir">
-                        <input type="number" placeholder="RESERVOIR" onChange={handleReservoir}/>
+                        <input type="number" placeholder="RESERVOIR" onChange={handleReservoir} name='reservoir'/>
                     </div>
 
                     <div className="input-consommation">
-                        <input type="number" placeholder="CONSOMMATION" onChange={handleConsommation}/>
+                        <input type="number" placeholder="CONSOMMATION" onChange={handleConsommation} name='conso'/>
                     </div>
 
                     <div className="input-matricule">
-                        <input type="text" placeholder="MATRICULE" onChange={handleMatricule}/>
+                        <input type="text" placeholder="MATRICULE" onChange={handleMatricule} name='matricule'/>
                     </div>
 
                     <div className="input-kilometrage">
-                        <input type="text" placeholder="KILOMETRAGE" onChange={handleKilometrage}/>
+                        <input type="text" placeholder="KILOMETRAGE" onChange={handleKilometrage} name='kilometrage'/>
                     </div>
 
-                    <div className="input-etat">
-                        <input type="number" placeholder="ETAT" onChange={handleEtat}/>
-                    </div>
                 </div>
 
                 <div className="link">
@@ -337,18 +419,18 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
         </>
     }
 
-    function Form4(fonction:any,selectedFile:any,handleFileChange:any) {
+    function Form4(fonction:any,image:any) {
         return <>
             <form action="" method="post">
                 <div className="input-group">
                     <div className="input-file">
-                        <label htmlFor="file">PHOTO {selectedFile && `(${selectedFile})`} <IonIcon icon={imageOutline}></IonIcon></label>
-                        <input type="file" id="file" accept="image/*" onChange={handleFileChange}/>
+                        <label htmlFor="file"><img src={image} alt="" /> <IonIcon icon={imageOutline}></IonIcon></label>
+                        <input type="button" id="file" name='images' accept="image/*" onClick={() => takePicture()}/>
                         {/* <p className="file-warning">Assurez-vous que la photo a une dimension de 735 x 490 pixels.</p> */}
                     </div>
 
                     <div className="input-description">
-                        <textarea name="" id="" cols="30" rows="10" placeholder='DESCRIPTION' onChange={handleDescription}></textarea>
+                        <textarea name="description" id="" cols="30" rows="10" placeholder='DESCRIPTION' onChange={handleDescription}></textarea>
                     </div>
                 </div>
 
@@ -368,10 +450,10 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
 
     function Form5(fonction:any) {
         return <>
-            <form action="" method="post">
+            <form onSubmit={handleSubmit}>
                 <div className="input-group">
                     <div className="input-prix">
-                        <input type="text" placeholder="PRIX" onChange={handlePrix} required />
+                        <input type="text" placeholder="PRIX" onChange={handlePrix} name='prix' />
                     </div>
                 </div>
 
@@ -402,7 +484,7 @@ import { SelectPCategorie } from '../../components/Select/SelectPCategorie';
                         {formPage == 0 && Form1(setFormPage,categorie,selectedCategorie,setSelectedCategorie,marque,selectedMarque,setSelectedMarque,energie,selectedEnergie,setSelectedEnergie,transmission,selectedTransmission,setSelectedTransmission,setDataForm,dataForm)}
                         {formPage == 1 && Form2(setFormPage,origine,selectedOrigine,setSelectedOrigine,couleur,selectedCouleur,setSelectedCouleur,setDataForm,dataForm)}
                         {formPage == 2 && Form3(setFormPage)}
-                        {formPage == 3 && Form4(setFormPage,selectedFile,handleFileChange)}
+                        {formPage == 3 && Form4(setFormPage,image)}
                         {formPage == 4 && Form5(setFormPage)}
                     </div>
                 </div>

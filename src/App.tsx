@@ -14,12 +14,9 @@ import Index from './pages/Index/Index';
 import Login from './pages/Login/Login';
 import Inscription from './pages/Inscription/Inscription';
 import Details from './pages/Details/Details';
-import ModifAnnonce from './pages/Modification/ModifAnnonce';
-import ModifAnnonceSuite from './pages/Modification/ModifAnnonceSuite';
 import Annonce from './pages/Annonce/Annonce';
 import Notification from './pages/Notification/Notification';
 import Profil from './pages/Profil/Profil';
-import ProfilModif from './pages/Profil/ProfilModif';
 import AjoutAnnonce from './pages/AjoutAnnonce/AjoutAnnonce';
 import DetailAnnonceProfil from './pages/DetailAnnonceProfil/DetailAnnonceProfil';
 
@@ -75,20 +72,11 @@ const App: React.FC = () => (
           <Route exact path="/details/:id_voiture">
             <Details />
           </Route>
-          <Route exact path="/modification">
-            <ModifAnnonce />
-          </Route>
-          <Route exact path="/modificationsuite">
-            <ModifAnnonceSuite />
-          </Route>
           <Route exact path="/notification">
             <Notification />
           </Route>
           <Route exact path="/profil">
             <Profil />
-          </Route>
-          <Route exact path="/modifprofil">
-            <ProfilModif />
           </Route>
           <Route exact path="/ajoutannonce">
             <AjoutAnnonce />

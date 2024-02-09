@@ -107,7 +107,6 @@ ion-content .ion-content-body-ajout {
 
         ion-icon {
             font-size: 20px;
-            position: absolute;
             padding-left: 7.9cm;
         }
     }
@@ -151,18 +150,6 @@ ion-content .ion-content-body-ajout {
     display: flex;
     justify-content: space-between;
 }
-
-/* .ion-content-body-ajout .button a {
-    text-decoration: none;
-    letter-spacing: 1px;
-    width: 4cm;
-    color: #2f3032;
-    background-color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    border: 1px groove;
-    padding: 3px;
-} */
 
 .ion-content-body-ajout .button-valider {
     letter-spacing: 1px;

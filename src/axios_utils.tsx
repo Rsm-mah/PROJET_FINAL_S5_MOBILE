@@ -65,3 +65,21 @@ export async function getListAnnonceProfil(url:any) {
             console.error('Erreur lors de l\'envoi des données à railway:', error);
         }
 }
+
+export async function putStatusAnnonceProfil(url:any) {
+    const token =localStorage.getItem('token');
+        try {
+            let config = {
+                method: 'POST',
+                maxBodyLength: Infinity,
+                url: url,
+                headers: {
+                    'authorization':token
+                },
+            };
+            const response = await axios.request(config);
+            return response;
+        } catch (error) {
+            console.error('Erreur lors de l\'envoi des données à railway:', error);
+        }
+}

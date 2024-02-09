@@ -44,19 +44,7 @@ import ProfilStats from './ProfilStats';
                 
                 <ProfilStats/>
 
-                <div className="swiper">
-                    <IonSegment color="dark" value={selectedSegment} onIonChange={handleSegmentChange}>
-                        <IonSegmentButton value="dark">
-                            <IonIcon icon={listOutline}></IonIcon>
-                        </IonSegmentButton>
-                        <IonSegmentButton value="heart">
-                            <IonIcon icon={heartOutline}></IonIcon>
-                        </IonSegmentButton>
-                    </IonSegment>
-                </div>
-
-                {selectedSegment === 'dark' && <ListAnnonceProfil />}
-                {selectedSegment === 'heart' && <ListAnnonceFavoris />}
+                <ListAnnonceProfil />
 
                 <Navigation/>
             </section>
