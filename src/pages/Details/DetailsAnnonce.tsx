@@ -58,13 +58,13 @@ import { ClipLoader } from 'react-spinners';
                 </div>
             ) : (
                 <div className='details'>
-                    <div className='voiture-photo'>
-                        <img src={Sary} alt="" />
-                    </div>
-                    <IonModal className='ion-modal' ref={modal} trigger="open-modal" isOpen={isModalOpen} initialBreakpoint={0.4} breakpoints={[0.4, 0.4, 0.73]} backdropDismiss={false} backdropBreakpoint={0.5}>
-                        <div className="voiture">
-                            {element && (
-                                <>
+                    {element && (
+                    <>
+                        <div className='voiture-photo'>
+                            <img src={element.photo} alt="" />
+                        </div>
+                        <IonModal className='ion-modal' ref={modal} trigger="open-modal" isOpen={isModalOpen} initialBreakpoint={0.4} breakpoints={[0.4, 0.4, 0.73]} backdropDismiss={false} backdropBreakpoint={0.5}>
+                            <div className="voiture">
                                     <div className="voiture-name">
                                         <div className="voiture-name-categorie">
                                             <h1>{element.marque} {element.model}</h1>
@@ -110,10 +110,10 @@ import { ClipLoader } from 'react-spinners';
                                     <Link to="">
                                         <button className="achat-button">ACHETER</button>
                                     </Link>
-                                </>
-                            )}
-                        </div>
-                    </IonModal>
+                            </div>
+                        </IonModal>
+                    </>
+                    )}
                 </div>
             )}
         </>

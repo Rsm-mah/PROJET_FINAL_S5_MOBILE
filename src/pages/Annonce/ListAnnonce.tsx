@@ -38,7 +38,7 @@ import { ClipLoader } from 'react-spinners';
                 data.map((data, index) => (
                     <div className="annonce" key={index}>
                         <IonCard>
-                            <img src={Sary} alt="" />
+                            <img src={data.photo} alt="" />
                             <IonCardHeader>
                                 <IonCardTitle>{data.marque} {data.model}</IonCardTitle>
                                 <IonCardSubtitle>{data.prix} Ar</IonCardSubtitle>

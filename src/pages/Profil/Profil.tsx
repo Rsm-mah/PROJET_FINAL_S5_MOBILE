@@ -7,8 +7,7 @@ import {
     IonContent
 } from '@ionic/react';
 import './Profil.css';
-import { listOutline,heartOutline } from 'ionicons/icons';
-import { Link } from 'react-router-dom';
+import { listOutline,heartOutline,exitOutline } from 'ionicons/icons';
 import Navigation from '../../components/Navigation/Navigation';
 import ListAnnonceProfil from './ListAnnonceProfil';
 import ListAnnonceFavoris from './ListAnnonceFavoris';
@@ -31,6 +30,9 @@ import ProfilStats from './ProfilStats';
                 <div className='profil-header'>
                     <div className="title">
                         <h2>Profil</h2>
+                    </div>
+                    <div className="icon_exit">
+                        <IonIcon icon={exitOutline}></IonIcon>
                     </div>
                 </div>
 

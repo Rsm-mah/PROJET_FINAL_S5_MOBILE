@@ -85,7 +85,11 @@ import { ClipLoader } from 'react-spinners';
                         </div>
         
                         <div className='detail-picture'>
-                            <img src={Sary2} alt="" />
+                            {element && (
+                                <>
+                                    <img src={element.photo} alt="" />
+                                </>
+                            )}
                         </div>
         
                         <div className="details">

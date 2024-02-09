@@ -37,8 +37,7 @@ import { ClipLoader } from 'react-spinners';
                 {data.map((data, index) => (
                     <div className="annonce" key={index}>
                         <Link to={`/detailannonceprofil/${data.id_voiture}`}>
-                            {/* <img src={Sary} alt="" /> */}
-                            <p>{data.id_voiture}</p>
+                            <img src={data.photo} alt="" />
                         </Link>
                     </div>
                 ))}
