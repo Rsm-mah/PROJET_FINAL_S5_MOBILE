@@ -10,8 +10,6 @@ import './Profil.css';
 import { listOutline,heartOutline,exitOutline } from 'ionicons/icons';
 import Navigation from '../../components/Navigation/Navigation';
 import ListAnnonceProfil from './ListAnnonceProfil';
-import ListAnnonceFavoris from './ListAnnonceFavoris';
-import ProfilStats from './ProfilStats';
   
   const Profil = () => {
     const [selectedSegment, setSelectedSegment] = useState<string>('dark');
@@ -42,7 +40,14 @@ import ProfilStats from './ProfilStats';
                     </div>
                 </div>
                 
-                <ProfilStats/>
+
+                <div className="swiper">
+                    <IonSegment color="dark" value={selectedSegment} onIonChange={handleSegmentChange}>
+                        <IonSegmentButton value="dark">
+                            <IonIcon icon={listOutline}></IonIcon>
+                        </IonSegmentButton>
+                    </IonSegment>
+                </div>
 
                 <ListAnnonceProfil />
 
