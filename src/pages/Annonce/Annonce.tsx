@@ -17,20 +17,8 @@ import Navigation from '../../components/Navigation/Navigation';
           <IonContent className='ion-content' fullscreen={true}>
             <section className='ion-content-body-annonce'>
                 <div className='annonce-header'>
-                    <IonSearchbar placeholder="Search a car"></IonSearchbar>
-
-                    <div className="slide-search">
-                      <Swiper
-                        spaceBetween={50}
-                        slidesPerView={3}
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
-                      >
-                        <SwiperSlide>Tous</SwiperSlide>
-                        <SwiperSlide>Nouveaux</SwiperSlide>
-                        <SwiperSlide>Récents</SwiperSlide>
-                        <SwiperSlide>Meilleurs prix</SwiperSlide>
-                      </Swiper>
+                    <div className="title">
+                        <h2>Annonces</h2>
                     </div>
                 </div>
 
