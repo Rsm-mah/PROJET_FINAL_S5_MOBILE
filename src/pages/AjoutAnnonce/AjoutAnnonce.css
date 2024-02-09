@@ -8,24 +8,26 @@ ion-content .ion-content-body-ajout {
     display: flex;
 }
 
-.ion-content-body-ajout .ion-content-body-ajout .icon-arrowBack {
+.ion-content-body-ajout .icon-arrowBack {
     width: 25%;
 }
 
-.ion-content-body-ajout .ion-content-body-ajout .icon-arrowBack ion-icon {
+.ion-content-body-ajout .icon-arrowBack ion-icon {
     font-size: 25px;
     position: relative;
     top: 30px;
     color: #2f3032;
 }
 
-.ion-content-body-ajout .ion-content-body-ajout .title {
+.ion-content-body-ajout .ajout-header .title {
     font-size: 16px;
     font-weight: bold;
     font-family: 'Montserat';
-    position: relative;
-    left: 50px;
     top: 10px;
+
+    h2 {
+        font-size: 30px;
+    }
 }
 
 .ion-content-body-ajout .body_ajout {
