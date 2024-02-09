@@ -187,11 +187,6 @@ import { ClipLoader } from 'react-spinners';
                                                 <h4>Consommation :</h4>
                                                 <p>{element.consommation}</p>
                                             </div>
-
-                                            <div className="propriete">
-                                                <h4>Etat :</h4>
-                                                <p>{element.etat}</p>
-                                            </div>
                 
                                             <div className="propriete">
                                                 <h4>Kilometrage :</h4>

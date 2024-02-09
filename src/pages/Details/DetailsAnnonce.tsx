@@ -95,7 +95,6 @@ import { ClipLoader } from 'react-spinners';
                                             <div className="prop-right">
                                                 <p>Modele: <span>{element.model}</span></p>
                                                 <p>Annee: <span>{element.annee}</span></p>
-                                                <p>Etat: <span>{element.etat}</span></p>
                                                 <p>Places: <span>{element.place}</span></p>
                                                 <p>Consommation: <span>{element.consommation}</span></p>
                                                 <p>Matricule: <span>{element.matricule}</span></p>
